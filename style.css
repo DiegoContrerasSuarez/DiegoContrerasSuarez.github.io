@@ -1,4 +1,4 @@
-/* style.css (UPDATED) */
+/* style.css (UPDATED to remove the “navy box” at the top) */
 
 :root{
   --bg:#0b1020;
@@ -18,9 +18,6 @@
 *{box-sizing:border-box}
 html,body{height:100%}
 
-/* IMPORTANT FIX:
-   Put gradients on a fixed pseudo-element so you don't get weird
-   horizontal “bands”/seams while scrolling or when the GPU repaints. */
 html{
   background: var(--bg);
 }
@@ -34,7 +31,7 @@ body{
   overflow-x: hidden;
 }
 
-/* the gradient layer */
+/* Gradient layer (fixed so it won’t band while scrolling) */
 body::before{
   content:"";
   position: fixed;
@@ -50,31 +47,59 @@ body::before{
 a{color:inherit}
 .container{max-width:var(--max); margin:0 auto; padding:0 var(--pad)}
 
+/* =========================
+   HEADER (NAVY BOX FIX)
+   =========================
+   The “navy box” is the sticky header’s semi-opaque background + blur.
+   Make it essentially transparent and remove the border.
+*/
 .header{
-  display:flex; align-items:center; justify-content:space-between;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
   padding:18px var(--pad);
-  position:sticky; top:0;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  background: rgba(11,16,32,.55);
-  border-bottom:1px solid var(--line);
+
+  position:sticky;
+  top:0;
   z-index:10;
+
+  /* remove the dark bar look */
+  background: transparent;
+  border-bottom: none;
+
+  /* optional: disable blur (blur can look like a solid bar on dark backgrounds) */
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
 }
 
 .brand{font-weight:800; text-decoration:none; letter-spacing:.2px}
 
-.nav{display:flex; gap:14px; align-items:center; flex-wrap:wrap}
-.nav a{color:var(--muted); text-decoration:none; font-weight:600}
+.nav{
+  display:flex;
+  gap:14px;
+  align-items:center;
+  flex-wrap:wrap;
+}
+
+.nav a{
+  color:var(--muted);
+  text-decoration:none;
+  font-weight:600;
+}
 .nav a:hover{color:var(--text)}
 
 .btn{
-  display:inline-flex; align-items:center; justify-content:center;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
   padding:10px 14px;
   border-radius:999px;
   border:1px solid var(--line);
   text-decoration:none;
   font-weight:700;
 }
+
 .btn.primary{
   border-color:transparent;
   background: linear-gradient(90deg, var(--accent), var(--accent2));
@@ -123,13 +148,20 @@ a{color:inherit}
   font-weight:700;
 }
 
-.link{display:inline-block; color:var(--accent2); text-decoration:none; font-weight:800}
+.link{
+  display:inline-block;
+  color:var(--accent2);
+  text-decoration:none;
+  font-weight:800;
+}
 .link:hover{text-decoration:underline}
 
 .stack{display:flex; flex-direction:column; gap:10px}
 
 .item{
-  display:flex; justify-content:space-between; gap:14px;
+  display:flex;
+  justify-content:space-between;
+  gap:14px;
   padding:14px 16px;
   border-radius:var(--radius);
   border:1px solid var(--line);
