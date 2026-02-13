@@ -1,3 +1,5 @@
+/* style.css (UPDATED) */
+
 :root{
   --bg:#0b1020;
   --card:#121a2f;
@@ -15,10 +17,30 @@
 
 *{box-sizing:border-box}
 html,body{height:100%}
+
+/* IMPORTANT FIX:
+   Put gradients on a fixed pseudo-element so you don't get weird
+   horizontal “bands”/seams while scrolling or when the GPU repaints. */
+html{
+  background: var(--bg);
+}
+
 body{
   margin:0;
   font-family:var(--font);
   color:var(--text);
+  background: var(--bg);
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* the gradient layer */
+body::before{
+  content:"";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
   background:
     radial-gradient(900px 450px at 20% -10%, rgba(122,162,255,.35), transparent 60%),
     radial-gradient(700px 400px at 85% 10%, rgba(110,231,255,.25), transparent 60%),
@@ -27,16 +49,20 @@ body{
 
 a{color:inherit}
 .container{max-width:var(--max); margin:0 auto; padding:0 var(--pad)}
+
 .header{
   display:flex; align-items:center; justify-content:space-between;
   padding:18px var(--pad);
   position:sticky; top:0;
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   background: rgba(11,16,32,.55);
   border-bottom:1px solid var(--line);
   z-index:10;
 }
+
 .brand{font-weight:800; text-decoration:none; letter-spacing:.2px}
+
 .nav{display:flex; gap:14px; align-items:center; flex-wrap:wrap}
 .nav a{color:var(--muted); text-decoration:none; font-weight:600}
 .nav a:hover{color:var(--text)}
@@ -72,6 +98,7 @@ a{color:inherit}
   grid-template-columns: repeat(12, 1fr);
   gap:14px;
 }
+
 .card{
   grid-column: span 6;
   background: rgba(18,26,47,.85);
@@ -80,9 +107,12 @@ a{color:inherit}
   padding:16px 16px 14px;
   box-shadow: var(--shadow);
 }
+
 .card h3{margin:0 0 6px}
 .card p{margin:0 0 12px; color:var(--muted); line-height:1.5}
+
 .meta{display:flex; gap:8px; flex-wrap:wrap; margin-bottom:10px}
+
 .pill{
   display:inline-flex;
   border:1px solid var(--line);
@@ -92,10 +122,12 @@ a{color:inherit}
   font-size:13px;
   font-weight:700;
 }
+
 .link{display:inline-block; color:var(--accent2); text-decoration:none; font-weight:800}
 .link:hover{text-decoration:underline}
 
 .stack{display:flex; flex-direction:column; gap:10px}
+
 .item{
   display:flex; justify-content:space-between; gap:14px;
   padding:14px 16px;
@@ -103,6 +135,7 @@ a{color:inherit}
   border:1px solid var(--line);
   background: rgba(18,26,47,.65);
 }
+
 .item h3{margin:0}
 .muted{color:var(--muted)}
 .note{color:var(--muted); margin-top:10px}
