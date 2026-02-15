@@ -258,16 +258,16 @@ a{color:inherit}
 }
 
 /* title hover */
-.menu-title:hover{ background:#8db842; }
+.menu-title:hover{ background:#b84242; }
 
 /* color variants */
-.menu-title_2nd{ background:#4e96b3; }
-.menu-title_2nd:hover{ background:#3e86a3; }
+.menu-title_2nd{ background:#b37b4e; }
+.menu-title_2nd:hover{ background:#a37b3e; }
 
-.menu-title_3rd{ background:#c97676; }
-.menu-title_3rd:hover{ background:#b96666; }
+.menu-title_3rd{ background:#c9a576; }
+.menu-title_3rd:hover{ background:#b9a366; }
 
-.menu-title_4th{ background:#dbab58; }
+.menu-title_4th{ background:#d9db58; }
 .menu-title_4th:hover{ background:#cb9b48; }
 
 /* dropdown panel */
