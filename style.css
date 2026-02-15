@@ -327,3 +327,64 @@ a{color:inherit}
   .dd-menu:hover .dd-dropdown,
   .dd-menu:focus-within .dd-dropdown{ display:block; }
 }
+
+/* style.css (ADD THESE RULES at the bottom — keeps your existing styles) */
+
+/* Make the dropdown list behave nicely inside the header */
+.dd-hList--top{
+  display:flex;
+  align-items:center;
+  gap: 10px;
+  flex-wrap:wrap;
+  justify-content:flex-end;
+  margin:0;
+  padding:0;
+}
+
+/* Smaller tabs for header */
+.dd-hList--top .dd-title{
+  width: 120px;
+  height: 36px;
+  padding-top: 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  letter-spacing: .3px;
+}
+
+/* dropdown panel placement for header */
+.dd-hList--top .dd-dropdown{
+  top: 44px;
+}
+
+/* Ensure dropdown appears above the hero */
+.header{
+  z-index: 50;
+}
+
+/* The animated name should be big like a hero title */
+.hero-name{
+  margin: 8px 0 14px;
+  font-size: clamp(34px, 5vw, 60px);
+  font-weight: 900;
+  letter-spacing: .5px;
+  line-height: 1.05;
+}
+
+/* Let the animated letters scale up and sit nicely */
+.hero-name.four span{
+  display:inline-block;
+  font-size: inherit;
+  line-height: inherit;
+  margin-right: 2px;
+}
+
+/* On small screens, keep header dropdown from overflowing */
+@media (max-width: 820px){
+  .dd-hList--top{
+    justify-content:flex-start;
+    gap: 8px;
+  }
+  .dd-hList--top .dd-title{
+    width: 108px;
+  }
+}
