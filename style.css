@@ -339,3 +339,41 @@ a{color:inherit}
   .menu:hover .menu-dropdown,
   .menu:focus-within .menu-dropdown{ display:block; }
 }
+/* ===== HERO NAME ANIMATION (Force Animation Four) ===== */
+
+/* Make sure spans are inline-block so transforms work */
+.hero-name span{
+  display:inline-block;
+}
+
+/* Stagger delays (only for the hero name) */
+.hero-name span:nth-of-type(1){ animation-delay: 0s; }
+.hero-name span:nth-of-type(2){ animation-delay: .05s; }
+.hero-name span:nth-of-type(3){ animation-delay: .10s; }
+.hero-name span:nth-of-type(4){ animation-delay: .15s; }
+.hero-name span:nth-of-type(5){ animation-delay: .20s; }
+.hero-name span:nth-of-type(6){ animation-delay: .25s; }
+.hero-name span:nth-of-type(7){ animation-delay: .30s; }
+.hero-name span:nth-of-type(8){ animation-delay: .35s; }
+.hero-name span:nth-of-type(9){ animation-delay: .40s; }
+.hero-name span:nth-of-type(10){ animation-delay: .45s; }
+.hero-name span:nth-of-type(11){ animation-delay: .50s; }
+.hero-name span:nth-of-type(12){ animation-delay: .55s; }
+.hero-name span:nth-of-type(13){ animation-delay: .60s; }
+.hero-name span:nth-of-type(14){ animation-delay: .65s; }
+.hero-name span:nth-of-type(15){ animation-delay: .70s; }
+
+/* Force Animation Four on ONLY the hero name (beats other CSS) */
+.hero-name.four span{
+  color: #8d6a00;
+  opacity: 0 !important;
+  transform: translate(0, -100px) rotate(360deg) scale(0) !important;
+  animation: revolveDrop .3s forwards !important;
+}
+
+/* Keyframes */
+@keyframes revolveDrop {
+  30% { transform: translate(0, -50px) rotate(180deg) scale(1); }
+  60% { transform: translate(0, 20px) scale(.8) rotate(0deg); }
+  100% { transform: translate(0) scale(1) rotate(0deg); opacity: 1; }
+}
