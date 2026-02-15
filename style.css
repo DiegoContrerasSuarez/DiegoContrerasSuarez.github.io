@@ -1,5 +1,5 @@
-/* style.css (UPDATED — removes the horizontal “stripe” by eliminating
-   transparent gradient edges and blending back into the base color) */
+/* style.css (UPDATED) */
+@import url('https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i');
 
 :root{
   --bg:#0b1020;
@@ -14,6 +14,11 @@
   --max: 980px;
   --pad: 22px;
   --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+
+  /* Dropdown theme vars */
+  --dd-width: 150px;
+  --dd-h: 40px;
+  --dd-radius: 14px;
 }
 
 *{box-sizing:border-box}
@@ -29,8 +34,6 @@ body{
   color:var(--text);
   overflow-x:hidden;
 
-  /* Key change: gradients blend back into --bg (NOT transparent),
-     which avoids hard compositing seams/stripes on some displays. */
   background:
     radial-gradient(900px 450px at 20% -10%,
       rgba(122,162,255,.35) 0%,
@@ -159,4 +162,168 @@ a{color:inherit}
   .card{grid-column: span 12}
   .header{position:static}
   body{background-attachment: scroll;}
+}
+
+/* Animation Four */
+.four span {
+  color: #8d6a00;
+  opacity: 0;
+  transform: translate(0, -100px) rotate(360deg) scale(0);
+  animation: revolveDrop .3s forwards;
+}
+@keyframes revolveDrop {
+  30% { transform: translate(0, -50px) rotate(180deg) scale(1); }
+  60% { transform: translate(0, 20px) scale(.8) rotate(0deg); }
+  100% { transform: translate(0) scale(1) rotate(0deg); opacity: 1; }
+}
+
+/* =========================
+   DROPDOWN MENUS (ADDED)
+   ========================= */
+
+.dropdown-card{
+  grid-column: span 12;
+  padding: 18px;
+}
+
+.dropdown-note{
+  margin: 14px 0 0;
+}
+
+/* reset list spacing inside the dropdown card */
+.dd-hList,
+.dd-hList ul{
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+
+.dd-hList{
+  display:flex;
+  gap: 0;
+  flex-wrap:wrap;
+  width: fit-content;
+  max-width: 100%;
+  border-radius: var(--dd-radius);
+  overflow: visible;
+}
+
+/* each tab wrapper */
+.dd-item{
+  position:relative;
+}
+
+/* clickable/hoverable menu container */
+.dd-menu{
+  display:block;
+  position:relative;
+  cursor:pointer;
+  text-decoration:none;
+}
+
+/* top title bar */
+.dd-title{
+  display:block;
+  width: var(--dd-width);
+  height: var(--dd-h);
+  padding: 11px 0 0;
+  text-align:center;
+  color:#ffffff;
+  font-weight:900;
+  text-transform:uppercase;
+  border-top-left-radius: var(--dd-radius);
+  border-top-right-radius: var(--dd-radius);
+  transition: 0.25s filter, 0.25s transform;
+}
+
+/* colors per tab */
+.dd-title--1{ background:#9dc852; }
+.dd-title--2{ background:#4e96b3; }
+.dd-title--3{ background:#c97676; }
+.dd-title--4{ background:#dbab58; }
+
+.dd-menu:hover .dd-title{ filter: brightness(0.95); }
+.dd-menu:active .dd-title{ transform: translateY(1px); }
+
+/* little top triangle "lip" (converted from SCSS) */
+.dd-title::before{
+  content:"";
+  display:block;
+  height:0;
+  border-top:5px solid currentColor;
+  border-left: calc(var(--dd-width) / 2) solid transparent;
+  border-right: calc(var(--dd-width) / 2) solid transparent;
+  border-bottom:0 solid transparent;
+  position:absolute;
+  top:100%;
+  left:0;
+  z-index: 3;
+  opacity: 0.0;
+}
+
+/* use matching triangle color per tab by setting currentColor on title */
+.dd-title--1{ color:#9dc852; }
+.dd-title--2{ color:#4e96b3; }
+.dd-title--3{ color:#c97676; }
+.dd-title--4{ color:#dbab58; }
+
+/* dropdown panel */
+.dd-dropdown{
+  min-width: 100%;
+  padding: 12px 0;
+  position:absolute;
+  left:0;
+  top: calc(var(--dd-h) + 6px);
+  background: rgba(235,235,235,0.98);
+  border: 1px solid rgba(0,0,0,0.12);
+  border-radius: 12px;
+  box-shadow: 0 18px 40px rgba(0,0,0,.35);
+  z-index: 2;
+  transform-origin: top;
+  transform: translateY(-4px) scaleY(0.98);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.18s transform ease, 0.18s opacity ease;
+}
+
+/* show on hover and on keyboard focus within */
+.dd-menu:hover .dd-dropdown,
+.dd-menu:focus-within .dd-dropdown{
+  transform: translateY(0) scaleY(1);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* dropdown items */
+.dd-dropdown li a{
+  display:block;
+  padding: 8px 12px;
+  color: #111827;
+  text-decoration:none;
+  font-weight: 800;
+  white-space: nowrap;
+  transition: 0.12s background-color ease, 0.12s transform ease;
+}
+.dd-dropdown li a:hover{
+  background: rgba(0,0,0,0.08);
+  transform: translateX(2px);
+}
+
+/* mobile: let dropdown be static (tap-friendly) */
+@media (max-width: 560px){
+  .dd-hList{ width: 100%; }
+  .dd-title{ width: min(100%, var(--dd-width)); }
+
+  .dd-dropdown{
+    position: static;
+    margin-top: 10px;
+    opacity: 1;
+    pointer-events: auto;
+    transform: none;
+  }
+
+  /* only show the dropdown for the active menu via hover/focus (still fine on tap) */
+  .dd-menu .dd-dropdown{ display:none; }
+  .dd-menu:hover .dd-dropdown,
+  .dd-menu:focus-within .dd-dropdown{ display:block; }
 }
