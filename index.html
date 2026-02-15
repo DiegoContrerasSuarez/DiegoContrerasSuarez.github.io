@@ -11,78 +11,65 @@
     />
     <link rel="stylesheet" href="style.css" />
   </head>
+<body>
+  <!-- TOP BAR (put dropdown INSIDE header) -->
+  <header class="container header">
+  <a class="brand" href="#top">Diego Contreras</a>
 
-  <body>
-    <!-- TOP BAR (DROPDOWN MENUS INSTEAD OF NAV) -->
-    <header class="container header">
-      <a class="brand" href="#top">Diego Contreras</a>
-
-      <ul class="dd-hList dd-hList--top" aria-label="Site dropdown navigation">
-        <li class="dd-item">
-          <a href="#education" class="dd-menu">
-            <span class="dd-title dd-title--1">Education</span>
-            <ul class="dd-dropdown">
-              <li><a href="#education">Overview</a></li>
-              <li><a href="#education">Coursework</a></li>
-              <li><a href="#education">Scholarships</a></li>
-            </ul>
-          </a>
-        </li>
-
-        <li class="dd-item">
-          <a href="#experience" class="dd-menu">
-            <span class="dd-title dd-title--2">Experience</span>
-            <ul class="dd-dropdown">
-              <li><a href="#experience">ACM Finance</a></li>
-              <li><a href="#experience">IEEE RAS</a></li>
-            </ul>
-          </a>
-        </li>
-
-        <li class="dd-item">
-          <a href="#projects" class="dd-menu">
-            <span class="dd-title dd-title--3">Projects</span>
-            <ul class="dd-dropdown">
-              <li><a href="#projects">All projects</a></li>
-              <li><a href="#projects">Automation</a></li>
-              <li><a href="#projects">Web</a></li>
-            </ul>
-          </a>
-        </li>
-
-        <li class="dd-item">
-          <a href="#skills" class="dd-menu">
-            <span class="dd-title dd-title--4">Skills</span>
-            <ul class="dd-dropdown">
-              <li><a href="#skills">Languages</a></li>
-              <li><a href="#skills">Frameworks</a></li>
-              <li><a href="#skills">Tools</a></li>
-            </ul>
-          </a>
-        </li>
-
-        <li class="dd-item">
-          <a href="#contact" class="dd-menu">
-            <span class="dd-title dd-title--1">Contact</span>
-            <ul class="dd-dropdown">
-              <li><a href="#contact">Email</a></li>
-              <li><a href="#contact">LinkedIn</a></li>
-              <li><a href="#contact">GitHub</a></li>
-            </ul>
-          </a>
-        </li>
-
-        <li class="dd-item">
-          <a href="resume.pdf" target="_blank" rel="noopener" class="dd-menu">
-            <span class="dd-title dd-title--2">Resume</span>
-            <ul class="dd-dropdown">
-              <li><a href="resume.pdf" target="_blank" rel="noopener">Open PDF</a></li>
-              <li><a href="#contact">Request latest</a></li>
-            </ul>
-          </a>
-        </li>
+  <ul class="hList" aria-label="Site navigation">
+    <li class="menu">
+      <a href="#education" class="menu-title">Education</a>
+      <ul class="menu-dropdown">
+        <li><a href="#education">Overview</a></li>
+        <li><a href="#education">Coursework</a></li>
+        <li><a href="#education">Scholarships</a></li>
       </ul>
-    </header>
+    </li>
+
+    <li class="menu">
+      <a href="#experience" class="menu-title menu-title_2nd">Experience</a>
+      <ul class="menu-dropdown">
+        <li><a href="#experience">ACM</a></li>
+        <li><a href="#experience">IEEE RAS</a></li>
+      </ul>
+    </li>
+
+    <li class="menu">
+      <a href="#projects" class="menu-title menu-title_3rd">Projects</a>
+      <ul class="menu-dropdown">
+        <li><a href="#projects">All projects</a></li>
+        <li><a href="#projects">Automation</a></li>
+        <li><a href="#projects">Web</a></li>
+      </ul>
+    </li>
+
+    <li class="menu">
+      <a href="#skills" class="menu-title menu-title_4th">Skills</a>
+      <ul class="menu-dropdown">
+        <li><a href="#skills">Languages</a></li>
+        <li><a href="#skills">Frameworks</a></li>
+        <li><a href="#skills">Tools</a></li>
+      </ul>
+    </li>
+
+    <li class="menu">
+      <a href="#contact" class="menu-title">Contact</a>
+      <ul class="menu-dropdown">
+        <li><a href="#contact">Email</a></li>
+        <li><a href="#contact">LinkedIn</a></li>
+        <li><a href="#contact">GitHub</a></li>
+      </ul>
+    </li>
+
+    <li class="menu">
+      <a href="resume.pdf" target="_blank" rel="noopener" class="menu-title menu-title_2nd">Resume</a>
+      <ul class="menu-dropdown">
+        <li><a href="resume.pdf" target="_blank" rel="noopener">Open PDF</a></li>
+      </ul>
+    </li>
+  </ul>
+</header>
+
 
     <main id="top" class="container">
       <!-- HERO -->
