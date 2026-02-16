@@ -21,18 +21,31 @@
 
 *{box-sizing:border-box}
 html,body{height:100%}
-html{ scroll-behavior: smooth; }
+html{ scroll-behavior:smooth; }
+
+/* ✅ Fix “top band” on initial load:
+   Make html own the background so the first paint matches body */
+html{
+  background:
+    radial-gradient(1200px 700px at 20% -10%, rgba(79,140,255,.25), transparent 60%),
+    radial-gradient(900px 600px at 85% 5%, rgba(120,240,255,.18), transparent 60%),
+    radial-gradient(900px 700px at 65% 110%, rgba(185,120,255,.16), transparent 60%),
+    var(--bg);
+  background-repeat:no-repeat;
+  background-attachment:fixed;
+}
 
 body{
   margin:0;
+  min-height:100vh;
   font-family:var(--font);
   color:var(--text);
-  background: radial-gradient(1200px 700px at 20% -10%, rgba(79,140,255,.25), transparent 60%),
-              radial-gradient(900px 600px at 85% 5%, rgba(120,240,255,.18), transparent 60%),
-              radial-gradient(900px 700px at 65% 110%, rgba(185,120,255,.16), transparent 60%),
-              var(--bg);
+  background: transparent; /* html owns the background */
   overflow-x:hidden;
 }
+
+a{color:inherit}
+.container{max-width:var(--max); margin:0 auto; padding:0 var(--pad)}
 
 /* Background blobs */
 .bg{
@@ -80,12 +93,9 @@ body{
   inset:0;
   opacity:.06;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E");
-  background-size: 180px 180px;
+  background-size: 320px 320px; /* larger = less noticeable tiling */
   mix-blend-mode: overlay;
 }
-
-a{color:inherit}
-.container{max-width:var(--max); margin:0 auto; padding:0 var(--pad)}
 
 /* Sticky Top Bar (always on) */
 .topbar{
@@ -174,8 +184,9 @@ a{color:inherit}
   content:"";
   position:absolute;
   inset:-2px;
-  background: radial-gradient(600px 200px at 20% 10%, rgba(120,240,255,.22), transparent 60%),
-              radial-gradient(700px 240px at 80% 20%, rgba(185,120,255,.18), transparent 62%);
+  background:
+    radial-gradient(600px 200px at 20% 10%, rgba(120,240,255,.22), transparent 60%),
+    radial-gradient(700px 240px at 80% 20%, rgba(185,120,255,.18), transparent 62%);
   opacity: .8;
   pointer-events:none;
 }
@@ -295,8 +306,9 @@ a{color:inherit}
   pointer-events:none;
   opacity: 0;
   transition: opacity .18s ease;
-  background: radial-gradient(600px 140px at 30% 10%, rgba(120,240,255,.14), transparent 60%),
-              radial-gradient(700px 180px at 80% 0%, rgba(185,120,255,.12), transparent 65%);
+  background:
+    radial-gradient(600px 140px at 30% 10%, rgba(120,240,255,.14), transparent 60%),
+    radial-gradient(700px 180px at 80% 0%, rgba(185,120,255,.12), transparent 65%);
 }
 .card:hover::after{ opacity: 1; }
 
@@ -420,43 +432,4 @@ a{color:inherit}
   .nav{ gap: 8px; }
   .nav a{ padding: 8px 8px; }
   .hero{ padding-top: 52px; }
-}
-/* =========================
-   FIX: one STATIC background
-   (no tiling, no section blocks)
-   ========================= */
-
-/* 1) Lock the page background (only on body) */
-html, body{
-  height: 100%;
-  background: var(--bg);
-}
-
-body{
-  background:
-    radial-gradient(1200px 700px at 20% -10%, rgba(79,140,255,.25), transparent 60%),
-    radial-gradient(900px 600px at 85% 5%, rgba(120,240,255,.18), transparent 60%),
-    radial-gradient(900px 700px at 65% 110%, rgba(185,120,255,.16), transparent 60%),
-    var(--bg);
-  background-repeat: no-repeat;      /* prevents “restarting” */
-  background-attachment: fixed;      /* makes it static while content moves */
-}
-
-/* 2) Ensure no section/container is painting its own big background */
-main, section, .container{
-  background: transparent !important;
-}
-
-/* 3) Make the blob layer fixed and non-repeating */
-.bg{
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-}
-
-/* If your noise overlay ever looks tiled, soften it + ensure it doesn’t “snap” */
-.noise{
-  background-repeat: repeat;
-  background-size: 320px 320px; /* larger = less noticeable tiling */
-  opacity: .05;
 }
