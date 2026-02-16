@@ -1,4 +1,4 @@
-<!-- index.html (UPDATED: header/nav replaced with dropdown, hero name replaced with animation) -->
+<!-- index.html (Apple-clean personal site — same info, sleek layout) -->
 <!doctype html>
 <html lang="en">
   <head>
@@ -11,251 +11,257 @@
     />
     <link rel="stylesheet" href="style.css" />
   </head>
-<body>
-  <!-- TOP BAR (put dropdown INSIDE header) -->
-  <header class="container header">
-  <a class="brand" href="#top">Diego Contreras</a>
 
-  <ul class="hList" aria-label="Site navigation">
-    <li class="menu">
-      <a href="#education" class="menu-title">Education</a>
-      <ul class="menu-dropdown">
-        <li><a href="#education">Overview</a></li>
-        <li><a href="#education">Coursework</a></li>
-        <li><a href="#education">Scholarships</a></li>
-      </ul>
-    </li>
+  <body>
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <a class="brand" href="#top" aria-label="Go to top">Diego Contreras</a>
 
-    <li class="menu">
-      <a href="#experience" class="menu-title menu-title_2nd">Experience</a>
-      <ul class="menu-dropdown">
-        <li><a href="#experience">ACM</a></li>
-        <li><a href="#experience">IEEE RAS</a></li>
-      </ul>
-    </li>
+        <nav class="nav" aria-label="Primary navigation">
+          <a href="#education">Education</a>
+          <a href="#experience">Experience</a>
+          <a href="#projects">Projects</a>
+          <a href="#skills">Skills</a>
+          <a href="#contact">Contact</a>
+          <a class="btn" href="resume.pdf" target="_blank" rel="noopener">Resume</a>
+        </nav>
+      </div>
+    </header>
 
-    <li class="menu">
-      <a href="#projects" class="menu-title menu-title_3rd">Projects</a>
-      <ul class="menu-dropdown">
-        <li><a href="#projects">All projects</a></li>
-        <li><a href="#projects">Automation</a></li>
-        <li><a href="#projects">Web</a></li>
-      </ul>
-    </li>
-
-    <li class="menu">
-      <a href="#skills" class="menu-title menu-title_4th">Skills</a>
-      <ul class="menu-dropdown">
-        <li><a href="#skills">Languages</a></li>
-        <li><a href="#skills">Frameworks</a></li>
-        <li><a href="#skills">Tools</a></li>
-      </ul>
-    </li>
-
-    <li class="menu">
-      <a href="#contact" class="menu-title">Contact</a>
-      <ul class="menu-dropdown">
-        <li><a href="#contact">Email</a></li>
-        <li><a href="#contact">LinkedIn</a></li>
-        <li><a href="#contact">GitHub</a></li>
-      </ul>
-    </li>
-
-    <li class="menu">
-      <a href="resume.pdf" target="_blank" rel="noopener" class="menu-title menu-title_2nd">Resume</a>
-      <ul class="menu-dropdown">
-        <li><a href="resume.pdf" target="_blank" rel="noopener">Open PDF</a></li>
-      </ul>
-    </li>
-  </ul>
-</header>
-
-
-    <main id="top" class="container">
+    <main id="top">
       <!-- HERO -->
       <section class="hero">
-        <p class="tag">UT Austin • CS + Government • Elements of Computing (in progress)</p>
+        <div class="container hero-inner">
+          <p class="eyebrow">UT Austin • CS + Government • Elements of Computing (in progress)</p>
+          <h1>Diego Raul Contreras Suarez</h1>
+          <p class="lead">
+            University of Texas at Austin student pursuing a BS in Computer Science and a BA in Government.
+            I like building tools that save time, improve workflows, and ship cleanly.
+          </p>
 
-        <!-- REPLACED THE GIANT NAME WITH THE ANIMATION -->
-        <div class="animate four hero-name" aria-label="Diego Contreras">
-          <span>D</span><span>I</span><span>E</span><span>G</span><span>O</span> &nbsp;
-          <span>C</span><span>O</span><span>N</span><span>T</span><span>R</span><span>E</span><span>R</span><span>A</span><span>S</span>
-        </div>
-
-        <p class="sub">
-          University of Texas at Austin student pursuing a BS in Computer Science and a BA in Government.
-          I like building tools that save time, improve workflows, and ship cleanly.
-        </p>
-        <div class="hero-actions">
-          <a class="btn primary" href="#projects">See projects</a>
-          <a class="btn ghost" href="#contact">Contact</a>
+          <div class="actions">
+            <a class="btn primary" href="#projects">See projects</a>
+            <a class="btn ghost" href="#contact">Contact</a>
+          </div>
         </div>
       </section>
 
       <!-- EDUCATION -->
       <section id="education" class="section">
-        <h2>Education</h2>
-        <div class="stack">
-          <div class="item">
-            <div>
-              <h3>University of Texas at Austin</h3>
-              <p class="muted">
-                BS in Computer Science, BA in Government, Certificate in The Elements of Computing (in progress)
-              </p>
-              <p class="muted">
-                <strong>Relevant Coursework:</strong> Data Structures, Discrete Mathematics, Intro to Programming,
-                Intro to Probability and Statistics, Multivariable Calculus, Engineering Physics, Statistical Analysis
-                in Political Science
-              </p>
-              <p class="muted"><strong>Scholarships:</strong> Hispanic Scholarship Fund (HSF) Scholar 2024</p>
+        <div class="container">
+          <div class="section-head">
+            <h2>Education</h2>
+          </div>
+
+          <div class="card">
+            <div class="split">
+              <div>
+                <h3>University of Texas at Austin</h3>
+                <p class="muted">
+                  BS in Computer Science, BA in Government, Certificate in The Elements of Computing (in progress)
+                </p>
+                <p class="muted">
+                  <strong>Relevant Coursework:</strong> Data Structures, Discrete Mathematics, Intro to Programming,
+                  Intro to Probability and Statistics, Multivariable Calculus, Engineering Physics, Statistical Analysis
+                  in Political Science
+                </p>
+                <p class="muted"><strong>Scholarships:</strong> Hispanic Scholarship Fund (HSF) Scholar 2024</p>
+              </div>
+
+              <div class="meta-right">
+                <p class="muted">Austin, TX</p>
+                <p class="muted">Aug 2023 – May 2027</p>
+              </div>
             </div>
-            <span class="muted">Austin, TX<br />Aug 2023 – May 2027</span>
           </div>
         </div>
       </section>
 
       <!-- EXPERIENCE -->
       <section id="experience" class="section">
-        <h2>Experience</h2>
-        <div class="stack">
-          <div class="item">
-            <div>
-              <h3>Association for Computing Machinery — Executive Finance Officer</h3>
-              <p class="muted">UT Austin • Austin, TX • Oct 2023 – Present</p>
-              <ul class="muted">
+        <div class="container">
+          <div class="section-head">
+            <h2>Experience</h2>
+          </div>
+
+          <div class="stack">
+            <article class="card">
+              <div class="card-head">
+                <h3>Association for Computing Machinery — Executive Finance Officer</h3>
+                <p class="muted">UT Austin • Austin, TX • Oct 2023 – Present</p>
+              </div>
+              <ul class="list">
                 <li>Oversaw a $15,000+ annual budget for the largest CS student org at UT Austin, allocating funds across 40+ events.</li>
                 <li>Organized large-scale events (Mentorship Program, Annual Retreat, Industry Banquet) serving 1,000+ members, achieving 95%+ attendance capacity.</li>
                 <li>Designed and launched fundraising initiatives that generated $2,000+ in sponsorships and donations.</li>
                 <li>Delivered weekly financial reports at officer meetings, enabling strategic planning and transparency across 15+ officers.</li>
               </ul>
-            </div>
-          </div>
+            </article>
 
-          <div class="item">
-            <div>
-              <h3>IEEE Robotics and Automation Society — Member</h3>
-              <p class="muted">UT Austin • Austin, TX • Sep 2023 – Present</p>
-              <ul class="muted">
+            <article class="card">
+              <div class="card-head">
+                <h3>IEEE Robotics and Automation Society — Member</h3>
+                <p class="muted">UT Austin • Austin, TX • Sep 2023 – Present</p>
+              </div>
+              <ul class="list">
                 <li>Programmed C++ algorithms for manual and autonomous control of competition robots, contributing to UT’s performance in the annual Robotathon.</li>
                 <li>Implemented burst-fire functionality on Robomaster Stampede, improving projectile accuracy by 20% in competitions.</li>
                 <li>Collaborated with 12+ team members across hardware/software, integrating code with real-time mechanical testing.</li>
               </ul>
-            </div>
+            </article>
           </div>
         </div>
       </section>
 
       <!-- PROJECTS -->
       <section id="projects" class="section">
-        <h2>Projects</h2>
+        <div class="container">
+          <div class="section-head">
+            <h2>Projects</h2>
+          </div>
 
-        <div class="grid">
-          <article class="card">
-            <h3>Opening Doors International Services</h3>
-            <p>Automations for intake + record management.</p>
-            <div class="meta">
-              <span class="pill">Google Apps Script</span>
-              <span class="pill">JavaScript</span>
-              <span class="pill">Google Sheets</span>
-            </div>
-            <ul class="muted">
-              <li>Automated intake forms, reducing manual case entry time by 60% (saving 10+ staff hours/week).</li>
-              <li>Digitized and reorganized 100+ client records to improve compliance, security, and tracking accuracy.</li>
-              <li>Built validation/flagging logic to catch incomplete submissions and improve data quality.</li>
-              <li>Provided technical support to staff, ensuring 100% adoption of automated systems.</li>
-            </ul>
-            <p class="muted">Jan 2024 – Aug 2024</p>
-          </article>
+          <div class="grid">
+            <article class="card">
+              <div class="card-head">
+                <h3>Opening Doors International Services</h3>
+                <p class="muted">Automations for intake + record management.</p>
+              </div>
+              <div class="chips">
+                <span class="chip">Google Apps Script</span>
+                <span class="chip">JavaScript</span>
+                <span class="chip">Google Sheets</span>
+              </div>
+              <ul class="list">
+                <li>Automated intake forms, reducing manual case entry time by 60% (saving 10+ staff hours/week).</li>
+                <li>Digitized and reorganized 100+ client records to improve compliance, security, and tracking accuracy.</li>
+                <li>Built validation/flagging logic to catch incomplete submissions and improve data quality.</li>
+                <li>Provided technical support to staff, ensuring 100% adoption of automated systems.</li>
+              </ul>
+              <p class="muted small">Jan 2024 – Aug 2024</p>
+            </article>
 
-          <article class="card">
-            <h3>Personal Website</h3>
-            <p>Hand-coded portfolio site (no templates).</p>
-            <div class="meta">
-              <span class="pill">HTML</span><span class="pill">CSS</span>
-            </div>
-            <ul class="muted">
-              <li>Designed and deployed a portfolio showcasing CS projects and leadership experience.</li>
-              <li>Optimized responsiveness for desktop and mobile.</li>
-              <li>Improved accessibility with semantic HTML and screen-reader-friendly structure.</li>
-              <li>Deployed via GitHub Pages; integrated custom domain + SSL (when applicable).</li>
-            </ul>
-            <p class="muted">Feb 2024 – Sep 2024</p>
-          </article>
+            <article class="card">
+              <div class="card-head">
+                <h3>Personal Website</h3>
+                <p class="muted">Hand-coded portfolio site (no templates).</p>
+              </div>
+              <div class="chips">
+                <span class="chip">HTML</span>
+                <span class="chip">CSS</span>
+              </div>
+              <ul class="list">
+                <li>Designed and deployed a portfolio showcasing CS projects and leadership experience.</li>
+                <li>Optimized responsiveness for desktop and mobile.</li>
+                <li>Improved accessibility with semantic HTML and screen-reader-friendly structure.</li>
+                <li>Deployed via GitHub Pages; integrated custom domain + SSL (when applicable).</li>
+              </ul>
+              <p class="muted small">Feb 2024 – Sep 2024</p>
+            </article>
 
-          <article class="card">
-            <h3>AI-Powered Calendar</h3>
-            <p>Hackathon prototype for natural-language scheduling.</p>
-            <div class="meta">
-              <span class="pill">Python</span>
-              <span class="pill">Claude AI</span>
-              <span class="pill">Google APIs</span>
-            </div>
-            <ul class="muted">
-              <li>Built an AI scheduling assistant in under 24 hours on a 4-person team.</li>
-              <li>Integrated Google Workspace APIs to auto-sync deadlines and events.</li>
-              <li>Parsed vague time phrases (“next Thursday”) into ISO-formatted datetime objects.</li>
-            </ul>
-            <p class="muted">Hackathon TX • Oct 2024</p>
-          </article>
+            <article class="card">
+              <div class="card-head">
+                <h3>AI-Powered Calendar</h3>
+                <p class="muted">Hackathon prototype for natural-language scheduling.</p>
+              </div>
+              <div class="chips">
+                <span class="chip">Python</span>
+                <span class="chip">Claude AI</span>
+                <span class="chip">Google APIs</span>
+              </div>
+              <ul class="list">
+                <li>Built an AI scheduling assistant in under 24 hours on a 4-person team.</li>
+                <li>Integrated Google Workspace APIs to auto-sync deadlines and events.</li>
+                <li>Parsed vague time phrases (“next Thursday”) into ISO-formatted datetime objects.</li>
+              </ul>
+              <p class="muted small">Hackathon TX • Oct 2024</p>
+            </article>
 
-          <article class="card">
-            <h3>AI Discord Chat Bot</h3>
-            <p>Modular chatbot with reliability + rate-limit protections.</p>
-            <div class="meta">
-              <span class="pill">Python</span>
-              <span class="pill">Discord API</span>
-              <span class="pill">VS Code</span>
-            </div>
-            <ul class="muted">
-              <li>Integrated OpenAI API for natural, context-aware conversations.</li>
-              <li>Built modular features (Q&amp;A, reminders, group announcements) with 95% command accuracy in testing.</li>
-              <li>Added error handling + cooldown logic to manage rate limits and prevent spam triggers.</li>
-            </ul>
-            <p class="muted">Feb 2024 – Present</p>
-          </article>
+            <article class="card">
+              <div class="card-head">
+                <h3>AI Discord Chat Bot</h3>
+                <p class="muted">Modular chatbot with reliability + rate-limit protections.</p>
+              </div>
+              <div class="chips">
+                <span class="chip">Python</span>
+                <span class="chip">Discord API</span>
+                <span class="chip">VS Code</span>
+              </div>
+              <ul class="list">
+                <li>Integrated OpenAI API for natural, context-aware conversations.</li>
+                <li>Built modular features (Q&amp;A, reminders, group announcements) with 95% command accuracy in testing.</li>
+                <li>Added error handling + cooldown logic to manage rate limits and prevent spam triggers.</li>
+              </ul>
+              <p class="muted small">Feb 2024 – Present</p>
+            </article>
+          </div>
         </div>
       </section>
 
       <!-- SKILLS -->
       <section id="skills" class="section">
-        <h2>Technical Skills</h2>
-        <div class="skills">
-          <span class="pill"><strong>Languages:</strong> Python, C++, Java, HTML, CSS</span>
-          <span class="pill"><strong>Frameworks:</strong> Unity, Unreal Engine</span>
-          <span class="pill"><strong>Dev Tools:</strong> Git, VS Code, Visual Studio</span>
-          <span class="pill"><strong>Misc:</strong> Blender, SolidWorks, Adobe Photoshop, Premiere Pro, Google Workshop</span>
+        <div class="container">
+          <div class="section-head">
+            <h2>Technical Skills</h2>
+          </div>
+
+          <div class="card">
+            <div class="chips big">
+              <span class="chip"><strong>Languages:</strong> Python, C++, Java, HTML, CSS</span>
+              <span class="chip"><strong>Frameworks:</strong> Unity, Unreal Engine</span>
+              <span class="chip"><strong>Dev Tools:</strong> Git, VS Code, Visual Studio</span>
+              <span class="chip"><strong>Misc:</strong> Blender, SolidWorks, Adobe Photoshop, Premiere Pro, Google Workshop</span>
+            </div>
+          </div>
         </div>
       </section>
 
       <!-- CONTACT -->
       <section id="contact" class="section">
-        <h2>Contact</h2>
-        <div class="contact card">
-          <ul>
-            <li><strong>Phone:</strong> 832-696-3032</li>
-            <li>
-              <strong>Email:</strong>
-              <a href="mailto:diegocontreras040105@gmail.com">diegocontreras040105@gmail.com</a>
-            </li>
-            <li>
-              <strong>LinkedIn:</strong>
-              <a href="https://linkedin.com/in/diego-contreras-s" target="_blank" rel="noopener"
-                >linkedin.com/in/diego-contreras-s</a
-              >
-            </li>
-            <li>
-              <strong>GitHub:</strong>
-              <a href="https://github.com/DiegoContrerasSuarez" target="_blank" rel="noopener">github.com/DiegoContrerasSuarez</a>
-            </li>
-          </ul>
+        <div class="container">
+          <div class="section-head">
+            <h2>Contact</h2>
+          </div>
+
+          <div class="card">
+            <ul class="contact">
+              <li><span class="label">Phone</span><span class="value">832-696-3032</span></li>
+              <li>
+                <span class="label">Email</span>
+                <span class="value"><a href="mailto:diegocontreras040105@gmail.com">diegocontreras040105@gmail.com</a></span>
+              </li>
+              <li>
+                <span class="label">LinkedIn</span>
+                <span class="value"><a href="https://linkedin.com/in/diego-contreras-s" target="_blank" rel="noopener">linkedin.com/in/diego-contreras-s</a></span>
+              </li>
+              <li>
+                <span class="label">GitHub</span>
+                <span class="value"><a href="https://github.com/DiegoContrerasSuarez" target="_blank" rel="noopener">github.com/DiegoContrerasSuarez</a></span>
+              </li>
+            </ul>
+          </div>
         </div>
       </section>
+
+      <footer class="footer">
+        <div class="container footer-inner">
+          <p class="muted">© <span id="year"></span> Diego Contreras</p>
+        </div>
+      </footer>
     </main>
 
-    <footer class="footer container">
-      <p class="muted">© <span id="year"></span> Diego Contreras</p>
-    </footer>
-
-    <script src="script.js"></script>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+      // smooth scroll for same-page anchors
+      document.querySelectorAll('a[href^="#"]').forEach((a) => {
+        a.addEventListener("click", (e) => {
+          const id = a.getAttribute("href");
+          if (!id || id === "#") return;
+          const target = document.querySelector(id);
+          if (!target) return;
+          e.preventDefault();
+          target.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+      });
+    </script>
   </body>
 </html>
