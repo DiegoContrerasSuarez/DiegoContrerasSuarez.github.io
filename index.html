@@ -1,4 +1,4 @@
-<!-- index.html (Apple-clean personal site — same info, sleek layout) -->
+<!-- index.html (UPDATED: adds background blobs, subtle motion, scroll reveal) -->
 <!doctype html>
 <html lang="en">
   <head>
@@ -13,6 +13,14 @@
   </head>
 
   <body>
+    <!-- Background gradient blobs -->
+    <div class="bg" aria-hidden="true">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="blob blob-3"></div>
+      <div class="noise"></div>
+    </div>
+
     <header class="topbar">
       <div class="container topbar-inner">
         <a class="brand" href="#top" aria-label="Go to top">Diego Contreras</a>
@@ -30,10 +38,12 @@
 
     <main id="top">
       <!-- HERO -->
-      <section class="hero">
+      <section class="hero reveal">
         <div class="container hero-inner">
           <p class="eyebrow">UT Austin • CS + Government • Elements of Computing (in progress)</p>
-          <h1>Diego Raul Contreras Suarez</h1>
+
+          <h1 class="shine">Diego Raul Contreras Suarez</h1>
+
           <p class="lead">
             University of Texas at Austin student pursuing a BS in Computer Science and a BA in Government.
             I like building tools that save time, improve workflows, and ship cleanly.
@@ -43,17 +53,32 @@
             <a class="btn primary" href="#projects">See projects</a>
             <a class="btn ghost" href="#contact">Contact</a>
           </div>
+
+          <div class="hero-metrics">
+            <div class="metric">
+              <div class="metric-num">CS + Gov</div>
+              <div class="metric-label">UT Austin</div>
+            </div>
+            <div class="metric">
+              <div class="metric-num">$15k+</div>
+              <div class="metric-label">Budget managed</div>
+            </div>
+            <div class="metric">
+              <div class="metric-num">1,000+</div>
+              <div class="metric-label">Members served</div>
+            </div>
+          </div>
         </div>
       </section>
 
       <!-- EDUCATION -->
-      <section id="education" class="section">
+      <section id="education" class="section reveal">
         <div class="container">
           <div class="section-head">
             <h2>Education</h2>
           </div>
 
-          <div class="card">
+          <div class="card lift">
             <div class="split">
               <div>
                 <h3>University of Texas at Austin</h3>
@@ -78,14 +103,14 @@
       </section>
 
       <!-- EXPERIENCE -->
-      <section id="experience" class="section">
+      <section id="experience" class="section reveal">
         <div class="container">
           <div class="section-head">
             <h2>Experience</h2>
           </div>
 
           <div class="stack">
-            <article class="card">
+            <article class="card lift">
               <div class="card-head">
                 <h3>Association for Computing Machinery — Executive Finance Officer</h3>
                 <p class="muted">UT Austin • Austin, TX • Oct 2023 – Present</p>
@@ -98,7 +123,7 @@
               </ul>
             </article>
 
-            <article class="card">
+            <article class="card lift">
               <div class="card-head">
                 <h3>IEEE Robotics and Automation Society — Member</h3>
                 <p class="muted">UT Austin • Austin, TX • Sep 2023 – Present</p>
@@ -114,14 +139,14 @@
       </section>
 
       <!-- PROJECTS -->
-      <section id="projects" class="section">
+      <section id="projects" class="section reveal">
         <div class="container">
           <div class="section-head">
             <h2>Projects</h2>
           </div>
 
           <div class="grid">
-            <article class="card">
+            <article class="card lift">
               <div class="card-head">
                 <h3>Opening Doors International Services</h3>
                 <p class="muted">Automations for intake + record management.</p>
@@ -140,7 +165,7 @@
               <p class="muted small">Jan 2024 – Aug 2024</p>
             </article>
 
-            <article class="card">
+            <article class="card lift">
               <div class="card-head">
                 <h3>Personal Website</h3>
                 <p class="muted">Hand-coded portfolio site (no templates).</p>
@@ -158,7 +183,7 @@
               <p class="muted small">Feb 2024 – Sep 2024</p>
             </article>
 
-            <article class="card">
+            <article class="card lift">
               <div class="card-head">
                 <h3>AI-Powered Calendar</h3>
                 <p class="muted">Hackathon prototype for natural-language scheduling.</p>
@@ -176,7 +201,7 @@
               <p class="muted small">Hackathon TX • Oct 2024</p>
             </article>
 
-            <article class="card">
+            <article class="card lift">
               <div class="card-head">
                 <h3>AI Discord Chat Bot</h3>
                 <p class="muted">Modular chatbot with reliability + rate-limit protections.</p>
@@ -198,13 +223,13 @@
       </section>
 
       <!-- SKILLS -->
-      <section id="skills" class="section">
+      <section id="skills" class="section reveal">
         <div class="container">
           <div class="section-head">
             <h2>Technical Skills</h2>
           </div>
 
-          <div class="card">
+          <div class="card lift">
             <div class="chips big">
               <span class="chip"><strong>Languages:</strong> Python, C++, Java, HTML, CSS</span>
               <span class="chip"><strong>Frameworks:</strong> Unity, Unreal Engine</span>
@@ -216,13 +241,13 @@
       </section>
 
       <!-- CONTACT -->
-      <section id="contact" class="section">
+      <section id="contact" class="section reveal">
         <div class="container">
           <div class="section-head">
             <h2>Contact</h2>
           </div>
 
-          <div class="card">
+          <div class="card lift">
             <ul class="contact">
               <li><span class="label">Phone</span><span class="value">832-696-3032</span></li>
               <li>
@@ -251,7 +276,8 @@
 
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();
-      // smooth scroll for same-page anchors
+
+      // Smooth scroll
       document.querySelectorAll('a[href^="#"]').forEach((a) => {
         a.addEventListener("click", (e) => {
           const id = a.getAttribute("href");
@@ -262,6 +288,18 @@
           target.scrollIntoView({ behavior: "smooth", block: "start" });
         });
       });
+
+      // Reveal-on-scroll
+      const els = document.querySelectorAll(".reveal");
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((en) => {
+            if (en.isIntersecting) en.target.classList.add("in");
+          });
+        },
+        { threshold: 0.12 }
+      );
+      els.forEach((el) => io.observe(el));
     </script>
   </body>
 </html>
