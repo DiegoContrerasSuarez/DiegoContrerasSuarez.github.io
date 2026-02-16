@@ -278,3 +278,25 @@ a{color:inherit}
   .nav a{ padding: 8px 8px; }
   .hero{ padding-top: 44px; }
 }
+/* ===== FIX: keep top bar sticky always ===== */
+.topbar{
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+
+  border-bottom: 1px solid var(--hairline);
+  background: rgba(255,255,255,.72);
+  backdrop-filter: var(--blur);
+  -webkit-backdrop-filter: var(--blur);
+}
+
+/* If any section/main wrappers accidentally clip sticky, disable clipping */
+html, body{
+  overflow-x: hidden;
+  overflow-y: visible;
+}
+
+/* IMPORTANT: If you have any wrapper/main/container with overflow set, undo it */
+main, .hero, .section, .container{
+  overflow: visible;
+}
