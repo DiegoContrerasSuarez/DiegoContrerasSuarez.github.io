@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio // Home</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="shell">
+    <aside class="rail">
+      <div class="dot"></div>
+      <div class="ticks">
+        <div class="tick"></div><div class="tick"></div><div class="tick"></div>
+        <div class="tick"></div><div class="tick"></div><div class="tick"></div>
+      </div>
+      <div class="vlabel">EXPLORE PORTFOLIO</div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <nav class="nav">
+          <div class="brand">
+            <div class="logo"></div>
+            <div class="name">Diego Contreras</div>
+            <div class="tag">SYSTEM: ONLINE</div>
+          </div>
+
+          <div class="navlinks">
+            <a data-nav href="index.html">Home</a>
+            <a data-nav href="projects.html">Projects</a>
+            <a data-nav href="about.html">About</a>
+            <a data-nav href="contact.html">Contact</a>
+          </div>
+
+          <div class="cta">
+            <a class="pill" href="projects.html">OPEN_PREVIEW</a>
+          </div>
+        </nav>
+      </header>
+
+      <section class="page">
+        <div class="hero">
+          <div class="card">
+            <div class="inner">
+              <div class="kicker">SERVER SLAM // PORTFOLIO BUILD</div>
+
+              <div class="h1">
+                <span class="glitch" data-text="OPEN_PREVIEW">OPEN_PREVIEW</span><br/>
+                <span class="accent">WEEKEND</span>
+              </div>
+
+              <p class="sub">
+                Projects from <b>internships</b>, <b>school</b>, and <b>personal builds</b>—presented like a
+                HUD readout. I build systems, tools, and interfaces with clean structure and sharp execution.
+              </p>
+
+              <div class="metaRow">
+                <div class="chip"><b>FOCUS</b> Systems + Web + Tools</div>
+                <div class="chip"><b>STATUS</b> Shipping</div>
+                <div class="chip"><b>MODE</b> Minimal / High-contrast</div>
+              </div>
+
+              <div class="metaRow" style="margin-top:16px;">
+                <a class="pill" href="projects.html">VIEW PROJECTS</a>
+                <a class="pill" href="contact.html" style="border-color: rgba(255,255,255,0.18); color: rgba(255,255,255,0.9); background: rgba(255,255,255,0.04);">
+                  CONTACT
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="heroRight">
+            <div class="readout">
+              <div class="title">
+                <span>BUILD LOG</span>
+                <span style="color: rgba(184,255,0,0.95); font-family: var(--mono);">v1.0</span>
+              </div>
+              <div class="progress" aria-hidden="true"><div></div></div>
+              <pre>
+> xor-coder compiling...
+> loading modules: WEB / SYSTEMS / DATA
+> handshake: established
+> next objective: highlight best work
+              </pre>
+            </div>
+
+            <div class="readout">
+              <div class="title">
+                <span>QUICK LINKS</span>
+                <span style="color: rgba(255,255,255,0.55);">[Z]</span>
+              </div>
+              <pre>
+[1] Projects Index  -> /projects.html
+[2] About / Skills  -> /about.html
+[3] Contact         -> /contact.html
+              </pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="sectionTitle">
+          <h2>Selected Modules</h2>
+          <div class="line"></div>
+        </div>
+
+        <div class="grid">
+          <a class="pcard span6" href="project.html?id=allocator" data-project>
+            <div class="top">
+              <h3 class="name">Dynamic Memory Allocator</h3>
+              <div class="badge">SCHOOL</div>
+            </div>
+            <p class="desc">Explicit free list allocator with coalescing + splitting, tuned for utilization and throughput.</p>
+            <div class="footer">
+              <div class="tags">
+                <span class="tag">C</span><span class="tag">Memory</span><span class="tag">Systems</span>
+              </div>
+              <div class="arrow">OPEN →</div>
+            </div>
+          </a>
+
+          <a class="pcard span6" href="project.html?id=portfolio" data-project>
+            <div class="top">
+              <h3 class="name">Cyber HUD Portfolio</h3>
+              <div class="badge">PERSONAL</div>
+            </div>
+            <p class="desc">Multi-page portfolio with neon UI, filtering, and “system readout” components.</p>
+            <div class="footer">
+              <div class="tags">
+                <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span>
+              </div>
+              <div class="arrow">OPEN →</div>
+            </div>
+          </a>
+
+          <a class="pcard span4" href="project.html?id=voicebot" data-project>
+            <div class="top">
+              <h3 class="name">Voice-to-Text Assistant</h3>
+              <div class="badge">PERSONAL</div>
+            </div>
+            <p class="desc">Push-to-talk speech recognition + overlay UX for fast in-game chat workflows.</p>
+            <div class="footer">
+              <div class="tags">
+                <span class="tag">Python</span><span class="tag">UX</span>
+              </div>
+              <div class="arrow">OPEN →</div>
+            </div>
+          </a>
+
+          <a class="pcard span4" href="project.html?id=datavis" data-project>
+            <div class="top">
+              <h3 class="name">Data Viz Dashboard</h3>
+              <div class="badge">INTERNSHIP</div>
+            </div>
+            <p class="desc">Template: replace with your internship dashboard/tool (no confidential details).</p>
+            <div class="footer">
+              <div class="tags">
+                <span class="tag">React</span><span class="tag">API</span>
+              </div>
+              <div class="arrow">OPEN →</div>
+            </div>
+          </a>
+
+          <a class="pcard span4" href="projects.html" data-project>
+            <div class="top">
+              <h3 class="name">Browse All Projects</h3>
+              <div class="badge">INDEX</div>
+            </div>
+            <p class="desc">Filter by category (internship / school / personal) and search by tags.</p>
+            <div class="footer">
+              <div class="tags">
+                <span class="tag">Search</span><span class="tag">Filter</span>
+              </div>
+              <div class="arrow">OPEN →</div>
+            </div>
+          </a>
+        </div>
+
+        <footer class="footer">
+          <div>© <span id="yr"></span> Diego Contreras // PORTFOLIO NODE</div>
+          <div style="color: rgba(184,255,0,0.85);">STATUS: ACTIVE</div>
+        </footer>
+      </section>
+    </main>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script>
+    document.getElementById("yr").textContent = new Date().getFullYear();
+  </script>
+  <script src="app.js"></script>
+</body>
+</html>
