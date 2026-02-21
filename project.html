@@ -87,12 +87,9 @@
             </div>
 
             <div class="readout">
-              <div class="title"><span>LINKS</span><span>[Z]</span></div>
-              <pre id="links">
-[1] demo: —
-[2] code: —
-              </pre>
-            </div>
+  <div class="title"><span>LINKS</span><span>[Z]</span></div>
+  <div id="links" class="linkList"></div>
+</div>
           </div>
         </div>
 
@@ -107,146 +104,173 @@
   <div class="toast" id="toast"></div>
 
   <script src="app.js"></script>
-  <script>
-    // Simple per-project data map (edit this!)
-    const PROJECTS = {
-      allocator: {
-        title: "Dynamic Memory Allocator",
-        type: "SCHOOL",
-        subtitle: "Explicit free list allocator tuned for utilization and throughput.",
-        headline: "UMALLOC / FREE LIST",
-        summary:
-          "Implemented an allocator with block headers, alignment rules, coalescing, splitting, and binning strategies. Focused on correctness and performance under test harnesses.",
-        highlights: [
-          "Block metadata encoding + alignment handling",
-          "Coalescing policies and split logic",
-          "Performance tuning (utilization vs throughput)"
-        ],
-        stack: ["C", "Systems", "Memory", "Debugging"],
-        readout:
+ <script>
+  const PROJECTS = {
+    allocator: {
+      title: "Dynamic Memory Allocator",
+      type: "SCHOOL",
+      subtitle: "Explicit free list allocator tuned for utilization and throughput.",
+      headline: "UMALLOC / FREE LIST",
+      summary:
+        "Implemented an allocator with block headers, alignment rules, coalescing, splitting, and binning strategies. Focused on correctness and performance under a course test harness.",
+      highlights: [
+        "Block metadata encoding + alignment handling",
+        "Coalescing and split behavior across free lists",
+        "Performance tuning (utilization vs throughput)"
+      ],
+      stack: ["C", "Systems", "Memory", "Debugging"],
+      readout:
 `> module loaded: allocator
 > heap: simulated via csbrk
 > coalesce: enabled
-> status: stable`,
-        links:
-`[1] demo: (add link)
-[2] code: (add link)`
-      },
-      portfolio: {
-        title: "Cyber HUD Portfolio",
-        type: "PERSONAL",
-        subtitle: "Multi-page neon interface with filtering and readouts.",
-        headline: "OPEN_PREVIEW / UI",
-        summary:
-          "Designed a bold, high-contrast portfolio experience with sticky nav, vertical rail, glitch accents, and a project filter system.",
-        highlights: [
-          "Responsive multi-page layout",
-          "Search + category filter",
-          "Reusable HUD components (readouts, chips, cards)"
-        ],
-        stack: ["HTML", "CSS", "JavaScript"],
-        readout:
+> status: complete`,
+      links: [
+        { label: "Portfolio Home", href: "index.html", kind: "OPEN" },
+        { label: "GitHub Profile", href: "https://github.com/DiegoContrerasSuarez", kind: "PROFILE", external: true },
+        { label: "Request Walkthrough", href: "mailto:diegocontreras040105@gmail.com?subject=Allocator%20Project%20Question", kind: "EMAIL" }
+      ]
+    },
+
+    portfolio: {
+      title: "Cyber HUD Portfolio",
+      type: "PERSONAL",
+      subtitle: "Multi-page neon interface with filtering and readouts.",
+      headline: "OPEN_PREVIEW / UI",
+      summary:
+        "Designed a bold, high-contrast portfolio experience with sticky nav, vertical rail, glitch accents, animated transitions, and reusable HUD components.",
+      highlights: [
+        "Responsive multi-page layout",
+        "Search + category filters on project index",
+        "Page glow transitions and visual hover polish"
+      ],
+      stack: ["HTML", "CSS", "JavaScript"],
+      readout:
 `> theme: neon HUD
 > pages: home/projects/about/contact
-> ui: scanlines + glitch
-> status: shipping`,
-        links:
-`[1] demo: (add link)
-[2] code: (add link)`
-      },
-      voicebot: {
-        title: "Voice-to-Text Chat Assistant",
-        type: "PERSONAL",
-        subtitle: "Speech recognition + overlay UX for fast chat workflows.",
-        headline: "VOICE / INPUT PIPELINE",
-        summary:
-          "Built a voice-driven chat tool with push-to-talk, transcription, and automated sending. Designed around speed and low friction in-game usage.",
-        highlights: [
-          "Push-to-talk hotkey + speech recognition",
-          "Overlay states for user feedback",
-          "Automation for quick message sending"
-        ],
-        stack: ["Python", "Speech", "Automation", "UX"],
-        readout:
+> ui: transitions + readouts
+> status: live`,
+      links: [
+        { label: "Live Site", href: "https://diegocontrerassuarez.github.io", kind: "LIVE", external: true },
+        { label: "Portfolio Repo", href: "https://github.com/DiegoContrerasSuarez/DiegoContrerasSuarez.github.io", kind: "CODE", external: true },
+        { label: "GitHub Profile", href: "https://github.com/DiegoContrerasSuarez", kind: "PROFILE", external: true }
+      ]
+    },
+
+    voicebot: {
+      title: "Voice-to-Text Chat Assistant",
+      type: "PERSONAL",
+      subtitle: "Speech recognition + overlay UX for fast chat workflows.",
+      headline: "VOICE / INPUT PIPELINE",
+      summary:
+        "Built a voice-driven chat tool with push-to-talk, transcription, and automated sending. Designed around speed and low-friction in-game usage.",
+      highlights: [
+        "Push-to-talk hotkey + speech recognition",
+        "On-screen overlay for feedback states",
+        "Automation for quick message sending"
+      ],
+      stack: ["Python", "Speech", "Automation", "UX"],
+      readout:
 `> audio: hotkey gated
-> recognizer: online/offline options
-> ui: overlay states
+> recognizer: active
+> overlay: enabled
 > status: iterating`,
-        links:
-`[1] demo: (add link)
-[2] code: (add link)`
-      },
-      huffman: {
-        title: "Huffman Coding Compressor",
-        type: "SCHOOL",
-        subtitle: "Bit-level compression using Huffman trees.",
-        headline: "COMPRESS / DECOMPRESS",
-        summary:
-          "Implemented Huffman encoding/decoding with tree construction, header formats, and bitstream IO integration.",
-        highlights: [
-          "Priority queue tree build",
-          "Code table generation + bit writing",
-          "Decoder reconstruction + validation"
-        ],
-        stack: ["Java", "Trees", "Compression", "IO"],
-        readout:
+      links: [
+        { label: "GitHub Profile", href: "https://github.com/DiegoContrerasSuarez", kind: "PROFILE", external: true },
+        { label: "Contact for Demo", href: "mailto:diegocontreras040105@gmail.com?subject=Voice-to-Text%20Project%20Demo", kind: "EMAIL" }
+      ]
+    },
+
+    huffman: {
+      title: "Huffman Coding Compressor",
+      type: "SCHOOL",
+      subtitle: "Bit-level compression using Huffman trees.",
+      headline: "COMPRESS / DECOMPRESS",
+      summary:
+        "Implemented Huffman encoding/decoding with tree construction, header formats, and bitstream IO integration.",
+      highlights: [
+        "Priority queue tree build",
+        "Code table generation + bit writing",
+        "Decoder reconstruction + validation"
+      ],
+      stack: ["Java", "Trees", "Compression", "IO"],
+      readout:
 `> encoding: huffman
 > bitstreams: enabled
 > correctness: verified
 > status: complete`,
-        links:
-`[1] demo: (add link)
-[2] code: (add link)`
-      },
-      "internship-template": {
-        title: "Internship Project (Template)",
-        type: "INTERNSHIP",
-        subtitle: "Replace with your real internship work (safe description).",
-        headline: "INTERN / MODULE",
-        summary:
-          "Template entry. Describe goals, what you built, impact metrics (if allowed), and your responsibilities—without sharing confidential details.",
-        highlights: [
-          "What problem you solved",
-          "What you built + how it shipped",
-          "Impact (latency reduced, time saved, adoption, etc.)"
-        ],
-        stack: ["(Tech 1)", "(Tech 2)", "(Tech 3)"],
-        readout:
+      links: [
+        { label: "Projects Index", href: "projects.html", kind: "OPEN" },
+        { label: "GitHub Profile", href: "https://github.com/DiegoContrerasSuarez", kind: "PROFILE", external: true },
+        { label: "Ask for Walkthrough", href: "mailto:diegocontreras040105@gmail.com?subject=Huffman%20Project%20Question", kind: "EMAIL" }
+      ]
+    },
+
+    "internship-template": {
+      title: "Internship Project",
+      type: "INTERNSHIP",
+      subtitle: "Template for internship work summary (safe/public version).",
+      headline: "INTERN / MODULE",
+      summary:
+        "Use this page to describe internship contributions in a public-safe way: problem, role, tools, and impact. Focus on what you improved without exposing proprietary details.",
+      highlights: [
+        "State the business/engineering problem",
+        "Describe what you built and your responsibilities",
+        "Give measurable impact if allowed"
+      ],
+      stack: ["Tooling", "API", "Data", "Docs"],
+      readout:
 `> confidentiality: respected
 > outcomes: documented
-> status: replace template`,
-        links:
-`[1] demo: (if public)
-[2] code: (if public)`
-      }
-    };
+> status: ready to customize`,
+      links: [
+        { label: "Contact Diego", href: "mailto:diegocontreras040105@gmail.com?subject=Internship%20Project%20Question", kind: "EMAIL" },
+        { label: "LinkedIn", href: "https://linkedin.com/in/diego-contreras-s", kind: "OPEN", external: true }
+      ]
+    }
+  };
 
-    const params = new URLSearchParams(location.search);
-    const id = params.get("id") || "portfolio";
-    const p = PROJECTS[id] || PROJECTS["portfolio"];
+  const params = new URLSearchParams(location.search);
+  const id = params.get("id") || "portfolio";
+  const p = PROJECTS[id] || PROJECTS["portfolio"];
 
-    document.getElementById("pid").textContent = id;
-    document.getElementById("title").textContent = p.title;
-    document.getElementById("subtitle").textContent = p.subtitle;
-    document.getElementById("type").textContent = p.type;
-    document.getElementById("headline").textContent = p.headline;
-    document.getElementById("summary").textContent = p.summary;
+  document.getElementById("pid").textContent = id;
+  document.getElementById("title").textContent = p.title;
+  document.getElementById("subtitle").textContent = p.subtitle;
+  document.getElementById("type").textContent = p.type;
+  document.getElementById("headline").textContent = p.headline;
+  document.getElementById("summary").textContent = p.summary;
 
-    document.getElementById("h1").textContent = p.highlights[0] || "—";
-    document.getElementById("h2").textContent = p.highlights[1] || "—";
-    document.getElementById("h3").textContent = p.highlights[2] || "—";
+  document.getElementById("h1").textContent = p.highlights[0] || "—";
+  document.getElementById("h2").textContent = p.highlights[1] || "—";
+  document.getElementById("h3").textContent = p.highlights[2] || "—";
 
-    const stack = document.getElementById("stack");
-    stack.innerHTML = "";
-    (p.stack || []).forEach(s => {
-      const el = document.createElement("div");
-      el.className = "chip";
-      el.textContent = s;
-      stack.appendChild(el);
-    });
+  const stack = document.getElementById("stack");
+  stack.innerHTML = "";
+  (p.stack || []).forEach((s) => {
+    const el = document.createElement("div");
+    el.className = "chip";
+    el.textContent = s;
+    stack.appendChild(el);
+  });
 
-    document.getElementById("readout").textContent = p.readout || "> —";
-    document.getElementById("links").textContent = p.links || "[1] demo: —\n[2] code: —";
-  </script>
+  document.getElementById("readout").textContent = p.readout || "> —";
+
+  const links = document.getElementById("links");
+  links.innerHTML = "";
+  (p.links || []).forEach((item) => {
+    const a = document.createElement("a");
+    a.href = item.href;
+    a.innerHTML = `<span>${item.label}</span><span>${item.kind || "OPEN"}</span>`;
+    if (item.external) {
+      a.target = "_blank";
+      a.rel = "noreferrer";
+      a.setAttribute("data-no-transition", "true");
+    }
+    if (String(item.href).startsWith("mailto:")) {
+      a.setAttribute("data-no-transition", "true");
+    }
+    links.appendChild(a);
+  });
+</script>
 </body>
 </html>

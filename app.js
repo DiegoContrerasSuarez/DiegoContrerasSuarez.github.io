@@ -1,12 +1,63 @@
 // ============================
-// Small helpers for the theme
+// Site behavior + transitions
 // ============================
 
 function setActiveNav() {
-  const path = location.pathname.split("/").pop() || "index.html";
-  document.querySelectorAll("[data-nav]").forEach(a => {
-    const target = a.getAttribute("href");
-    if (target === path) a.classList.add("active");
+  const current = location.pathname.split("/").pop() || "index.html";
+  document.querySelectorAll("[data-nav]").forEach((a) => {
+    const href = a.getAttribute("href");
+    if (href === current || (current === "" && href === "index.html")) {
+      a.classList.add("active");
+    }
+  });
+}
+
+function ensurePageGlow() {
+  let glow = document.getElementById("pageGlow");
+  if (!glow) {
+    glow = document.createElement("div");
+    glow.id = "pageGlow";
+    document.body.appendChild(glow);
+  }
+  return glow;
+}
+
+function initPageTransition() {
+  const glow = ensurePageGlow();
+
+  // fade-in on load
+  requestAnimationFrame(() => {
+    document.body.classList.add("body-loaded");
+    glow.classList.add("is-entering");
+    setTimeout(() => glow.classList.remove("is-entering"), 500);
+  });
+
+  // intercept internal links only
+  document.querySelectorAll("a[href]").forEach((a) => {
+    const href = a.getAttribute("href");
+    if (!href) return;
+    if (a.hasAttribute("data-no-transition")) return;
+    if (href.startsWith("#")) return;
+    if (href.startsWith("mailto:")) return;
+    if (href.startsWith("tel:")) return;
+
+    const url = new URL(a.href, location.href);
+
+    // external links: open normally
+    if (url.origin !== location.origin) return;
+
+    a.addEventListener("click", (e) => {
+      // allow new-tab / modifier clicks
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+
+      e.preventDefault();
+      glow.classList.add("is-leaving");
+      document.body.classList.remove("body-loaded");
+
+      setTimeout(() => {
+        window.location.href = url.href;
+      }, 220);
+    });
   });
 }
 
@@ -26,14 +77,13 @@ function wireCopyEmail() {
     const email = btn.getAttribute("data-copy-email");
     try {
       await navigator.clipboard.writeText(email);
-      toast("COPIED", `Email copied to clipboard: ${email}`);
+      toast("COPIED", `Email copied: ${email}`);
     } catch {
-      toast("COPY FAILED", "Your browser blocked clipboard access.");
+      toast("COPY FAILED", "Clipboard access was blocked.");
     }
   });
 }
 
-// Projects page filtering (optional)
 function wireProjectFilters() {
   const search = document.getElementById("projectSearch");
   const type = document.getElementById("projectType");
@@ -45,15 +95,15 @@ function wireProjectFilters() {
     const q = search.value.trim().toLowerCase();
     const t = type.value;
 
-    cards.forEach(card => {
+    cards.forEach((card) => {
       const name = (card.getAttribute("data-name") || "").toLowerCase();
       const tags = (card.getAttribute("data-tags") || "").toLowerCase();
       const kind = card.getAttribute("data-type") || "all";
 
       const okQ = !q || name.includes(q) || tags.includes(q);
-      const okT = (t === "all") || (kind === t);
+      const okT = t === "all" || kind === t;
 
-      card.style.display = (okQ && okT) ? "" : "none";
+      card.style.display = okQ && okT ? "" : "none";
     });
   }
 
@@ -64,6 +114,7 @@ function wireProjectFilters() {
 
 document.addEventListener("DOMContentLoaded", () => {
   setActiveNav();
+  initPageTransition();
   wireCopyEmail();
   wireProjectFilters();
 });
