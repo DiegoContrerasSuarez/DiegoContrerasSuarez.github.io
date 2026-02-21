@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio // Contact</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="shell">
+    <aside class="rail">
+      <div class="dot"></div>
+      <div class="ticks">
+        <div class="tick"></div><div class="tick"></div><div class="tick"></div>
+        <div class="tick"></div><div class="tick"></div><div class="tick"></div>
+      </div>
+      <div class="vlabel">CONTACT CHANNEL</div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <nav class="nav">
+          <div class="brand">
+            <div class="logo"></div>
+            <div class="name">Diego Contreras</div>
+            <div class="tag">COMMS</div>
+          </div>
+
+          <div class="navlinks">
+            <a data-nav href="index.html">Home</a>
+            <a data-nav href="projects.html">Projects</a>
+            <a data-nav href="about.html">About</a>
+            <a data-nav href="contact.html">Contact</a>
+          </div>
+
+          <div class="cta">
+            <button class="pill" data-copy-email="diegocontreras040105@gmail.com">COPY EMAIL</button>
+          </div>
+        </nav>
+      </header>
+
+      <section class="page">
+        <div class="pageHead">
+          <div>
+            <h1>Contact</h1>
+            <p>Send a message (or just copy the email and reach out directly).</p>
+          </div>
+          <div class="chip"><b>SECURE</b> no backend—demo form only</div>
+        </div>
+
+        <div class="grid">
+          <div class="card span8">
+            <div class="inner">
+              <div class="kicker">MESSAGE</div>
+              <p class="sub" style="margin-top:12px;">
+                This form is front-end only. If you want it to actually send, I can wire it to
+                Formspree / Netlify Forms / a tiny server.
+              </p>
+
+              <form class="form" onsubmit="event.preventDefault(); toast('SENT (SIMULATED)', 'Wire to a backend to actually deliver messages.');">
+                <div class="field">
+                  <label>Name</label>
+                  <input placeholder="Your name" required />
+                </div>
+                <div class="field">
+                  <label>Email</label>
+                  <input type="email" placeholder="you@example.com" required />
+                </div>
+                <div class="field">
+                  <label>Message</label>
+                  <textarea placeholder="What are you building / hiring for?" required></textarea>
+                </div>
+                <button class="pill" type="submit">TRANSMIT</button>
+              </form>
+            </div>
+          </div>
+
+          <div class="span4">
+            <div class="readout">
+              <div class="title"><span>DIRECT</span><span>[Z]</span></div>
+              <pre>
+Email: diegocontreras040105@gmail.com
+GitHub: (add link)
+LinkedIn: (add link)
+              </pre>
+            </div>
+          </div>
+        </div>
+
+        <footer class="footer">
+          <div>CONTACT NODE // clipboard enabled</div>
+          <div style="color: rgba(184,255,0,0.85);">Press COPY EMAIL in the nav</div>
+        </footer>
+      </section>
+    </main>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>
