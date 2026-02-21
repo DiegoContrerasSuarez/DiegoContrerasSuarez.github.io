@@ -3,28 +3,27 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Portfolio // Project</title>
+  <title>Project Module // Diego Contreras</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <div class="shell">
     <aside class="rail">
-      <div class="dot"></div>
-      <div class="ticks">
-        <div class="tick"></div><div class="tick"></div><div class="tick"></div>
-        <div class="tick"></div><div class="tick"></div><div class="tick"></div>
+      <div class="rail-dot"></div>
+      <div class="rail-lines">
+        <span></span><span></span><span></span><span></span><span></span><span></span>
       </div>
-      <div class="vlabel">PROJECT DETAIL</div>
+      <div class="rail-label">PROJECT MODULE</div>
     </aside>
 
     <main class="main">
       <header class="topbar">
         <nav class="nav">
-          <div class="brand">
-            <div class="logo"></div>
-            <div class="name">Diego Contreras</div>
-            <div class="tag">DETAIL VIEW</div>
-          </div>
+          <a class="brand" href="index.html">
+            <span class="brand-logo"></span>
+            <span class="brand-name">Diego Contreras</span>
+            <span class="brand-tag">SYSTEM: ONLINE</span>
+          </a>
 
           <div class="navlinks">
             <a data-nav href="index.html">Home</a>
@@ -33,244 +32,100 @@
             <a data-nav href="contact.html">Contact</a>
           </div>
 
-          <div class="cta">
-            <a class="pill" href="projects.html">BACK</a>
-          </div>
+          <a class="pill" href="projects.html">BACK_INDEX</a>
         </nav>
       </header>
 
       <section class="page">
-        <div class="pageHead">
-          <div>
-            <h1 id="title">Project</h1>
-            <p id="subtitle">Loading module…</p>
-          </div>
-          <div class="chip"><b>ID</b> <span id="pid">unknown</span></div>
-        </div>
+        <div class="detail-grid">
+          <section class="panel detail-main">
+            <div class="panel-inner">
+              <div class="kicker">MODULE // <span id="pid">portfolio</span></div>
+              <h1 class="page-title" id="title">Project Title</h1>
+              <p class="sub" id="subtitle">Project subtitle</p>
 
-        <div class="grid">
-          <div class="card span8">
-            <div class="inner">
-              <div class="kicker" id="type">CATEGORY</div>
-              <div class="h1" style="font-size: clamp(34px, 3.7vw, 56px); margin-top:12px;">
-                <span class="accent" id="headline">MODULE_NAME</span>
-              </div>
+              <div class="headline-box" id="headline">OPEN_PREVIEW / UI</div>
 
               <p class="sub" id="summary">
-                Replace this content per-project. This template reads an `id` param from the URL.
+                Project summary...
               </p>
 
-              <div class="sectionTitle" style="margin-top:18px;">
-                <h2>Highlights</h2><div class="line"></div>
+              <div class="meta-row" id="stack"></div>
+
+              <div class="section-title small">
+                <h2>Highlights</h2>
+                <div class="line"></div>
               </div>
 
-              <ul style="margin:0; padding-left:18px; color: rgba(255,255,255,0.78); line-height:1.7;">
-                <li id="h1">…</li>
-                <li id="h2">…</li>
-                <li id="h3">…</li>
-              </ul>
+              <div class="impact-grid">
+                <article class="impact-card">
+                  <div class="impact-top">
+                    <span class="label">01</span>
+                    <span class="num">•</span>
+                  </div>
+                  <p id="h1">—</p>
+                </article>
 
-              <div class="sectionTitle" style="margin-top:18px;">
-                <h2>Stack</h2><div class="line"></div>
+                <article class="impact-card">
+                  <div class="impact-top">
+                    <span class="label">02</span>
+                    <span class="num">•</span>
+                  </div>
+                  <p id="h2">—</p>
+                </article>
+
+                <article class="impact-card">
+                  <div class="impact-top">
+                    <span class="label">03</span>
+                    <span class="num">•</span>
+                  </div>
+                  <p id="h3">—</p>
+                </article>
               </div>
-
-              <div class="metaRow" id="stack"></div>
             </div>
-          </div>
+          </section>
 
-          <div class="span4">
-            <div class="readout" style="margin-bottom:14px;">
-              <div class="title"><span>SYSTEM READOUT</span><span>[LIVE]</span></div>
-              <pre id="readout">
-> initializing…
+          <div class="side-stack">
+            <section class="readout">
+              <div class="readout-title">
+                <span>MODULE TYPE</span>
+                <span id="type">PERSONAL</span>
+              </div>
+              <pre class="mono-block" id="readout">
+> module loaded
               </pre>
-            </div>
+            </section>
 
-            <div class="readout">
-  <div class="title"><span>LINKS</span><span>[Z]</span></div>
-  <div id="links" class="linkList"></div>
-</div>
+            <section class="readout">
+              <div class="readout-title">
+                <span>LINKS</span>
+                <span>[Z]</span>
+              </div>
+              <div class="link-list" id="links"></div>
+            </section>
+
+            <section class="readout">
+              <div class="readout-title">
+                <span>NAV</span>
+                <span>[1]</span>
+              </div>
+              <div class="link-list">
+                <a href="projects.html"><span>Back to Projects</span><span>OPEN</span></a>
+                <a href="contact.html"><span>Contact Diego</span><span>OPEN</span></a>
+              </div>
+            </section>
           </div>
         </div>
 
         <footer class="footer">
-          <div>DETAIL NODE // project.html?id=...</div>
-          <div style="color: rgba(184,255,0,0.85);">Add more project entries in the JS map</div>
+          <span>Module detail view</span>
+          <span class="muted-green">READY</span>
         </footer>
       </section>
     </main>
   </div>
 
   <div class="toast" id="toast"></div>
-
   <script src="app.js"></script>
- <script>
-  const PROJECTS = {
-    allocator: {
-      title: "Dynamic Memory Allocator",
-      type: "SCHOOL",
-      subtitle: "Explicit free list allocator tuned for utilization and throughput.",
-      headline: "UMALLOC / FREE LIST",
-      summary:
-        "Implemented an allocator with block headers, alignment rules, coalescing, splitting, and binning strategies. Focused on correctness and performance under a course test harness.",
-      highlights: [
-        "Block metadata encoding + alignment handling",
-        "Coalescing and split behavior across free lists",
-        "Performance tuning (utilization vs throughput)"
-      ],
-      stack: ["C", "Systems", "Memory", "Debugging"],
-      readout:
-`> module loaded: allocator
-> heap: simulated via csbrk
-> coalesce: enabled
-> status: complete`,
-      links: [
-        { label: "Portfolio Home", href: "index.html", kind: "OPEN" },
-        { label: "GitHub Profile", href: "https://github.com/DiegoContrerasSuarez", kind: "PROFILE", external: true },
-        { label: "Request Walkthrough", href: "mailto:diegocontreras040105@gmail.com?subject=Allocator%20Project%20Question", kind: "EMAIL" }
-      ]
-    },
-
-    portfolio: {
-      title: "Cyber HUD Portfolio",
-      type: "PERSONAL",
-      subtitle: "Multi-page neon interface with filtering and readouts.",
-      headline: "OPEN_PREVIEW / UI",
-      summary:
-        "Designed a bold, high-contrast portfolio experience with sticky nav, vertical rail, glitch accents, animated transitions, and reusable HUD components.",
-      highlights: [
-        "Responsive multi-page layout",
-        "Search + category filters on project index",
-        "Page glow transitions and visual hover polish"
-      ],
-      stack: ["HTML", "CSS", "JavaScript"],
-      readout:
-`> theme: neon HUD
-> pages: home/projects/about/contact
-> ui: transitions + readouts
-> status: live`,
-      links: [
-        { label: "Live Site", href: "https://diegocontrerassuarez.github.io", kind: "LIVE", external: true },
-        { label: "Portfolio Repo", href: "https://github.com/DiegoContrerasSuarez/DiegoContrerasSuarez.github.io", kind: "CODE", external: true },
-        { label: "GitHub Profile", href: "https://github.com/DiegoContrerasSuarez", kind: "PROFILE", external: true }
-      ]
-    },
-
-    voicebot: {
-      title: "Voice-to-Text Chat Assistant",
-      type: "PERSONAL",
-      subtitle: "Speech recognition + overlay UX for fast chat workflows.",
-      headline: "VOICE / INPUT PIPELINE",
-      summary:
-        "Built a voice-driven chat tool with push-to-talk, transcription, and automated sending. Designed around speed and low-friction in-game usage.",
-      highlights: [
-        "Push-to-talk hotkey + speech recognition",
-        "On-screen overlay for feedback states",
-        "Automation for quick message sending"
-      ],
-      stack: ["Python", "Speech", "Automation", "UX"],
-      readout:
-`> audio: hotkey gated
-> recognizer: active
-> overlay: enabled
-> status: iterating`,
-      links: [
-        { label: "GitHub Profile", href: "https://github.com/DiegoContrerasSuarez", kind: "PROFILE", external: true },
-        { label: "Contact for Demo", href: "mailto:diegocontreras040105@gmail.com?subject=Voice-to-Text%20Project%20Demo", kind: "EMAIL" }
-      ]
-    },
-
-    huffman: {
-      title: "Huffman Coding Compressor",
-      type: "SCHOOL",
-      subtitle: "Bit-level compression using Huffman trees.",
-      headline: "COMPRESS / DECOMPRESS",
-      summary:
-        "Implemented Huffman encoding/decoding with tree construction, header formats, and bitstream IO integration.",
-      highlights: [
-        "Priority queue tree build",
-        "Code table generation + bit writing",
-        "Decoder reconstruction + validation"
-      ],
-      stack: ["Java", "Trees", "Compression", "IO"],
-      readout:
-`> encoding: huffman
-> bitstreams: enabled
-> correctness: verified
-> status: complete`,
-      links: [
-        { label: "Projects Index", href: "projects.html", kind: "OPEN" },
-        { label: "GitHub Profile", href: "https://github.com/DiegoContrerasSuarez", kind: "PROFILE", external: true },
-        { label: "Ask for Walkthrough", href: "mailto:diegocontreras040105@gmail.com?subject=Huffman%20Project%20Question", kind: "EMAIL" }
-      ]
-    },
-
-    "internship-template": {
-      title: "Internship Project",
-      type: "INTERNSHIP",
-      subtitle: "Template for internship work summary (safe/public version).",
-      headline: "INTERN / MODULE",
-      summary:
-        "Use this page to describe internship contributions in a public-safe way: problem, role, tools, and impact. Focus on what you improved without exposing proprietary details.",
-      highlights: [
-        "State the business/engineering problem",
-        "Describe what you built and your responsibilities",
-        "Give measurable impact if allowed"
-      ],
-      stack: ["Tooling", "API", "Data", "Docs"],
-      readout:
-`> confidentiality: respected
-> outcomes: documented
-> status: ready to customize`,
-      links: [
-        { label: "Contact Diego", href: "mailto:diegocontreras040105@gmail.com?subject=Internship%20Project%20Question", kind: "EMAIL" },
-        { label: "LinkedIn", href: "https://linkedin.com/in/diego-contreras-s", kind: "OPEN", external: true }
-      ]
-    }
-  };
-
-  const params = new URLSearchParams(location.search);
-  const id = params.get("id") || "portfolio";
-  const p = PROJECTS[id] || PROJECTS["portfolio"];
-
-  document.getElementById("pid").textContent = id;
-  document.getElementById("title").textContent = p.title;
-  document.getElementById("subtitle").textContent = p.subtitle;
-  document.getElementById("type").textContent = p.type;
-  document.getElementById("headline").textContent = p.headline;
-  document.getElementById("summary").textContent = p.summary;
-
-  document.getElementById("h1").textContent = p.highlights[0] || "—";
-  document.getElementById("h2").textContent = p.highlights[1] || "—";
-  document.getElementById("h3").textContent = p.highlights[2] || "—";
-
-  const stack = document.getElementById("stack");
-  stack.innerHTML = "";
-  (p.stack || []).forEach((s) => {
-    const el = document.createElement("div");
-    el.className = "chip";
-    el.textContent = s;
-    stack.appendChild(el);
-  });
-
-  document.getElementById("readout").textContent = p.readout || "> —";
-
-  const links = document.getElementById("links");
-  links.innerHTML = "";
-  (p.links || []).forEach((item) => {
-    const a = document.createElement("a");
-    a.href = item.href;
-    a.innerHTML = `<span>${item.label}</span><span>${item.kind || "OPEN"}</span>`;
-    if (item.external) {
-      a.target = "_blank";
-      a.rel = "noreferrer";
-      a.setAttribute("data-no-transition", "true");
-    }
-    if (String(item.href).startsWith("mailto:")) {
-      a.setAttribute("data-no-transition", "true");
-    }
-    links.appendChild(a);
-  });
-</script>
 </body>
 </html>

@@ -9,22 +9,21 @@
 <body>
   <div class="shell">
     <aside class="rail">
-      <div class="dot"></div>
-      <div class="ticks">
-        <div class="tick"></div><div class="tick"></div><div class="tick"></div>
-        <div class="tick"></div><div class="tick"></div><div class="tick"></div>
+      <div class="rail-dot"></div>
+      <div class="rail-lines">
+        <span></span><span></span><span></span><span></span><span></span><span></span>
       </div>
-      <div class="vlabel">EXPLORE PORTFOLIO</div>
+      <div class="rail-label">EXPLORE PORTFOLIO</div>
     </aside>
 
     <main class="main">
       <header class="topbar">
         <nav class="nav">
-          <div class="brand">
-            <div class="logo"></div>
-            <div class="name">Diego Contreras</div>
-            <div class="tag">SYSTEM: ONLINE</div>
-          </div>
+          <a class="brand" href="index.html">
+            <span class="brand-logo"></span>
+            <span class="brand-name">Diego Contreras</span>
+            <span class="brand-tag">SYSTEM: ONLINE</span>
+          </a>
 
           <div class="navlinks">
             <a data-nav href="index.html">Home</a>
@@ -33,91 +32,88 @@
             <a data-nav href="contact.html">Contact</a>
           </div>
 
-          <div class="cta">
-            <a class="pill" href="projects.html">OPEN_PREVIEW</a>
-          </div>
+          <a class="pill" href="projects.html">OPEN_PREVIEW</a>
         </nav>
       </header>
 
       <section class="page">
-        <!-- LANDING HERO -->
-        <div class="landingGrid">
-          <div class="introPanel">
-            <div class="inner">
+        <div class="landing-grid">
+          <section class="panel intro-panel">
+            <div class="panel-inner">
               <div class="kicker">SERVER SLAM // INTRO NODE</div>
 
-              <div class="h1">
-                <span class="glitch" data-text="DIEGO_CONTRERAS">DIEGO_CONTRERAS</span><br />
+              <h1 class="hero-title">
+                <span class="glitch" data-text="DIEGO_CONTRERAS">DIEGO_CONTRERAS</span>
                 <span class="accent">BUILDING SYSTEMS + UI</span>
-              </div>
+              </h1>
 
               <p class="sub">
                 I’m a UT Austin student building projects across <b>systems</b>, <b>software</b>, and <b>web interfaces</b>.
                 This portfolio is a curated overview of work from <b>school</b>, <b>internships</b>, and <b>personal builds</b>.
               </p>
 
-              <ul class="introList">
-                <li>Computer Science + Government background (technical + practical communication)</li>
-                <li>Strong on implementation detail, debugging, and shipping polished deliverables</li>
-                <li>Interested in internships and roles involving software, systems, and tooling</li>
+              <ul class="intro-list">
+                <li>Computer Science + Government background (technical + communication)</li>
+                <li>Strong on debugging, implementation detail, and shipping polished results</li>
+                <li>Interested in software, systems, tooling, and interface-focused roles</li>
               </ul>
 
-              <div class="introActions">
+              <div class="intro-actions">
                 <a class="pill" href="projects.html">VIEW PROJECTS</a>
-                <a class="ghostBtn" href="about.html">ABOUT ME</a>
-                <a class="ghostBtn" href="contact.html">CONTACT</a>
+                <a class="ghost-btn" href="about.html">ABOUT ME</a>
+                <a class="ghost-btn" href="contact.html">CONTACT</a>
               </div>
 
-              <div class="homeDivider"></div>
+              <div class="home-divider"></div>
 
-              <div class="metaRow" style="margin-top:14px;">
+              <div class="meta-row">
                 <div class="chip"><b>FOCUS</b> Systems + Web + Tools</div>
                 <div class="chip"><b>LOCATION</b> Austin, TX</div>
                 <div class="chip"><b>STATUS</b> Open to opportunities</div>
               </div>
 
-              <div class="statGrid">
-                <div class="miniStat">
+              <div class="stat-grid">
+                <div class="mini-stat">
                   <div class="k">Primary Languages</div>
                   <div class="v">C / Java / Python / JS</div>
                 </div>
-                <div class="miniStat">
+                <div class="mini-stat">
                   <div class="k">Portfolio Theme</div>
                   <div class="v">Cyber HUD</div>
                 </div>
-                <div class="miniStat">
-                  <div class="k">Build Philosophy</div>
+                <div class="mini-stat">
+                  <div class="k">Build Style</div>
                   <div class="v">Readable + Fast</div>
                 </div>
-                <div class="miniStat">
+                <div class="mini-stat">
                   <div class="k">Workflow</div>
                   <div class="v">Iterate + Ship</div>
                 </div>
               </div>
             </div>
-          </div>
+          </section>
 
-          <div class="quickPanel">
-            <div class="readout">
-              <div class="title">
+          <div class="side-stack">
+            <section class="readout">
+              <div class="readout-title">
                 <span>BUILD LOG</span>
-                <span style="color: rgba(184,255,0,0.95); font-family: var(--mono);">v1.1</span>
+                <span class="muted-green">v1.1</span>
               </div>
-              <div class="progress" aria-hidden="true"><div style="width:74%"></div></div>
-              <div class="monoBlock">
+              <div class="progress"><div style="width: 76%"></div></div>
+              <pre class="mono-block">
 > xor-coder compiling...
 > loading modules: WEB / SYSTEMS / DATA
 > handshake: established
-> objective: show work clearly + fast
-              </div>
-            </div>
+> objective: highlight best work
+              </pre>
+            </section>
 
-            <div class="readout">
-              <div class="title">
+            <section class="readout">
+              <div class="readout-title">
                 <span>QUICK LINKS</span>
                 <span>[Z]</span>
               </div>
-              <div class="linkList">
+              <div class="link-list">
                 <a href="https://github.com/DiegoContrerasSuarez" target="_blank" rel="noreferrer">
                   <span>GitHub Profile</span><span>OPEN ↗</span>
                 </a>
@@ -131,152 +127,136 @@
                   <span>Email Diego</span><span>SEND</span>
                 </a>
               </div>
-            </div>
+            </section>
 
-            <div class="readout">
-              <div class="title">
+            <section class="readout">
+              <div class="readout-title">
                 <span>NAVIGATION</span>
                 <span>[1-4]</span>
               </div>
-              <div class="monoBlock">
+              <pre class="mono-block">
 [1] Projects    -> /projects.html
 [2] About       -> /about.html
 [3] Contact     -> /contact.html
-[4] This repo   -> GitHub
-              </div>
-            </div>
+[4] Live Site   -> GitHub Pages
+              </pre>
+            </section>
           </div>
         </div>
 
-        <!-- IMPACT SECTION -->
-        <div class="sectionTitle">
+        <div class="section-title">
           <h2>Impact</h2>
           <div class="line"></div>
         </div>
 
-        <div class="impactGrid">
-          <div class="impactCard">
-            <div class="topline">
-              <div class="label">Systems Work</div>
-              <div class="num">C</div>
+        <div class="impact-grid">
+          <article class="impact-card">
+            <div class="impact-top">
+              <span class="label">Systems Work</span>
+              <span class="num">C</span>
             </div>
             <p>
-              Built low-level coursework projects focused on memory management, data structures, and debugging under strict test harnesses.
+              Built low-level coursework projects focused on memory management, data structures, and performance under strict test harnesses.
             </p>
-          </div>
+          </article>
 
-          <div class="impactCard">
-            <div class="topline">
-              <div class="label">Portfolio Quality</div>
-              <div class="num">UI</div>
+          <article class="impact-card">
+            <div class="impact-top">
+              <span class="label">Portfolio Quality</span>
+              <span class="num">UI</span>
             </div>
             <p>
-              Designed this portfolio as a reusable multi-page interface with filtering, transitions, and a consistent visual system.
+              Designed this portfolio as a reusable multi-page experience with filtering, transitions, and consistent “HUD” components.
             </p>
-          </div>
+          </article>
 
-          <div class="impactCard">
-            <div class="topline">
-              <div class="label">Execution Style</div>
-              <div class="num">++</div>
+          <article class="impact-card">
+            <div class="impact-top">
+              <span class="label">Execution Style</span>
+              <span class="num">++</span>
             </div>
             <p>
-              Strong preference for clean structure, iterative improvements, and builds that are easy to explain and maintain.
+              Strong preference for clean structure, iterative improvements, and projects that are easy to explain and maintain.
             </p>
-          </div>
+          </article>
         </div>
 
-        <!-- SELECTED PROJECTS -->
-        <div class="sectionTitle">
+        <div class="section-title">
           <h2>Selected Modules</h2>
           <div class="line"></div>
         </div>
 
         <div class="grid">
-          <a class="pcard span6" href="project.html?id=allocator" data-project>
-            <div class="top">
+          <a class="pcard span6" href="project.html?id=allocator">
+            <div class="pcard-top">
               <h3 class="name">Dynamic Memory Allocator</h3>
               <div class="badge">SCHOOL</div>
             </div>
             <p class="desc">Explicit free list allocator with coalescing + splitting, tuned for utilization and throughput.</p>
-            <div class="footer">
-              <div class="tags">
-                <span class="tag">C</span><span class="tag">Memory</span><span class="tag">Systems</span>
-              </div>
+            <div class="pcard-footer">
+              <div class="tags"><span>C</span><span>Memory</span><span>Systems</span></div>
               <div class="arrow">OPEN →</div>
             </div>
           </a>
 
-          <a class="pcard span6" href="project.html?id=portfolio" data-project>
-            <div class="top">
+          <a class="pcard span6" href="project.html?id=portfolio">
+            <div class="pcard-top">
               <h3 class="name">Cyber HUD Portfolio</h3>
-              <div class="badge">PERSONAL</div>
+              <div class="badge personal">PERSONAL</div>
             </div>
             <p class="desc">Multi-page portfolio with neon UI, filtering, transitions, and “system readout” components.</p>
-            <div class="footer">
-              <div class="tags">
-                <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span>
-              </div>
+            <div class="pcard-footer">
+              <div class="tags"><span>HTML</span><span>CSS</span><span>JS</span></div>
               <div class="arrow">OPEN →</div>
             </div>
           </a>
 
-          <a class="pcard span4" href="project.html?id=voicebot" data-project>
-            <div class="top">
+          <a class="pcard span4" href="project.html?id=voicebot">
+            <div class="pcard-top">
               <h3 class="name">Voice-to-Text Assistant</h3>
-              <div class="badge">PERSONAL</div>
+              <div class="badge personal">PERSONAL</div>
             </div>
             <p class="desc">Push-to-talk speech recognition + overlay UX for faster in-game chat workflows.</p>
-            <div class="footer">
-              <div class="tags">
-                <span class="tag">Python</span><span class="tag">UX</span>
-              </div>
+            <div class="pcard-footer">
+              <div class="tags"><span>Python</span><span>UX</span></div>
               <div class="arrow">OPEN →</div>
             </div>
           </a>
 
-          <a class="pcard span4" href="project.html?id=internship-template" data-project>
-            <div class="top">
-              <h3 class="name">Internship Work</h3>
-              <div class="badge">INTERNSHIP</div>
+          <a class="pcard span4" href="project.html?id=huffman">
+            <div class="pcard-top">
+              <h3 class="name">Huffman Compressor</h3>
+              <div class="badge">SCHOOL</div>
             </div>
-            <p class="desc">Project summary template for internship builds—clean outcomes without exposing confidential details.</p>
-            <div class="footer">
-              <div class="tags">
-                <span class="tag">Tooling</span><span class="tag">Impact</span>
-              </div>
+            <p class="desc">Bit-level compression and decompression with Huffman trees and custom file handling.</p>
+            <div class="pcard-footer">
+              <div class="tags"><span>Java</span><span>Trees</span></div>
               <div class="arrow">OPEN →</div>
             </div>
           </a>
 
-          <a class="pcard span4" href="projects.html" data-project>
-            <div class="top">
+          <a class="pcard span4" href="projects.html">
+            <div class="pcard-top">
               <h3 class="name">Browse All Projects</h3>
-              <div class="badge">INDEX</div>
+              <div class="badge index">INDEX</div>
             </div>
             <p class="desc">Filter by category (internship / school / personal) and search by tags.</p>
-            <div class="footer">
-              <div class="tags">
-                <span class="tag">Search</span><span class="tag">Filter</span>
-              </div>
+            <div class="pcard-footer">
+              <div class="tags"><span>Search</span><span>Filter</span></div>
               <div class="arrow">OPEN →</div>
             </div>
           </a>
         </div>
 
         <footer class="footer">
-          <div>© <span id="yr"></span> Diego Contreras // PORTFOLIO NODE</div>
-          <div style="color: rgba(184,255,0,0.85);">STATUS: ACTIVE</div>
+          <span>© <span data-year></span> Diego Contreras // PORTFOLIO NODE</span>
+          <span class="muted-green">STATUS: ACTIVE</span>
         </footer>
       </section>
     </main>
   </div>
 
   <div class="toast" id="toast"></div>
-
-  <script>
-    document.getElementById("yr").textContent = new Date().getFullYear();
-  </script>
   <script src="app.js"></script>
 </body>
 </html>

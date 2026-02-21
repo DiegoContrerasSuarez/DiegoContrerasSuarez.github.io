@@ -3,28 +3,27 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Portfolio // Contact</title>
+  <title>Contact // Diego Contreras</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <div class="shell">
     <aside class="rail">
-      <div class="dot"></div>
-      <div class="ticks">
-        <div class="tick"></div><div class="tick"></div><div class="tick"></div>
-        <div class="tick"></div><div class="tick"></div><div class="tick"></div>
+      <div class="rail-dot"></div>
+      <div class="rail-lines">
+        <span></span><span></span><span></span><span></span><span></span><span></span>
       </div>
-      <div class="vlabel">CONTACT CHANNEL</div>
+      <div class="rail-label">CONTACT NODE</div>
     </aside>
 
     <main class="main">
       <header class="topbar">
         <nav class="nav">
-          <div class="brand">
-            <div class="logo"></div>
-            <div class="name">Diego Contreras</div>
-            <div class="tag">COMMS</div>
-          </div>
+          <a class="brand" href="index.html">
+            <span class="brand-logo"></span>
+            <span class="brand-name">Diego Contreras</span>
+            <span class="brand-tag">SYSTEM: ONLINE</span>
+          </a>
 
           <div class="navlinks">
             <a data-nav href="index.html">Home</a>
@@ -33,70 +32,70 @@
             <a data-nav href="contact.html">Contact</a>
           </div>
 
-          <div class="cta">
-            <button class="pill" data-copy-email="diegocontreras040105@gmail.com">COPY EMAIL</button>
-          </div>
+          <a class="pill" href="mailto:diegocontreras040105@gmail.com" data-no-transition>EMAIL</a>
         </nav>
       </header>
 
       <section class="page">
-        <div class="pageHead">
-          <div>
-            <h1>Contact</h1>
-            <p>Send a message (or just copy the email and reach out directly).</p>
-          </div>
-          <div class="chip"><b>SECURE</b> no backend—demo form only</div>
-        </div>
-
-        <div class="grid">
-          <div class="card span8">
-            <div class="inner">
-              <div class="kicker">MESSAGE</div>
-              <p class="sub" style="margin-top:12px;">
-                This form is front-end only. If you want it to actually send, I can wire it to
-                Formspree / Netlify Forms / a tiny server.
+        <div class="detail-grid">
+          <section class="panel detail-main">
+            <div class="panel-inner">
+              <div class="kicker">DIRECT // CONTACT</div>
+              <h1 class="page-title">Contact</h1>
+              <p class="sub">
+                If you want to talk about internships, projects, collaborations, or just a build idea, send me a message.
               </p>
 
-              <form class="form" onsubmit="event.preventDefault(); toast('SENT (SIMULATED)', 'Wire to a backend to actually deliver messages.');">
-                <div class="field">
-                  <label>Name</label>
-                  <input placeholder="Your name" required />
-                </div>
-                <div class="field">
-                  <label>Email</label>
-                  <input type="email" placeholder="you@example.com" required />
-                </div>
-                <div class="field">
-                  <label>Message</label>
-                  <textarea placeholder="What are you building / hiring for?" required></textarea>
-                </div>
-                <button class="pill" type="submit">TRANSMIT</button>
-              </form>
-            </div>
-          </div>
+              <div class="headline-box">OPEN_CHANNEL / FAST RESPONSE</div>
 
-          <div class="readout">
-  <div class="title"><span>DIRECT</span><span>[Z]</span></div>
-  <div class="linkList">
-    <a href="mailto:diegocontreras040105@gmail.com" data-no-transition>
-      <span>diegocontreras040105@gmail.com</span><span>EMAIL</span>
-    </a>
-    <a href="https://github.com/DiegoContrerasSuarez" target="_blank" rel="noreferrer">
-      <span>GitHub Profile</span><span>OPEN ↗</span>
-    </a>
-    <a href="https://linkedin.com/in/diego-contreras-s" target="_blank" rel="noreferrer">
-      <span>LinkedIn</span><span>OPEN ↗</span>
-    </a>
-    <a href="https://diegocontrerassuarez.github.io" target="_blank" rel="noreferrer">
-      <span>Live Site</span><span>LIVE ↗</span>
-    </a>
-  </div>
-</div>
+              <div class="bullet-panel">
+                <ul>
+                  <li>Best for project questions: email</li>
+                  <li>Best for experience/profile: LinkedIn</li>
+                  <li>Best for code and updates: GitHub</li>
+                </ul>
+              </div>
+
+              <div class="intro-actions">
+                <button class="ghost-btn" data-copy-email="diegocontreras040105@gmail.com">COPY EMAIL</button>
+                <a class="pill" href="mailto:diegocontreras040105@gmail.com" data-no-transition>SEND EMAIL</a>
+              </div>
+            </div>
+          </section>
+
+          <div class="side-stack">
+            <section class="readout">
+              <div class="readout-title"><span>DIRECT</span><span>[Z]</span></div>
+              <div class="link-list">
+                <a href="mailto:diegocontreras040105@gmail.com" data-no-transition>
+                  <span>diegocontreras040105@gmail.com</span><span>EMAIL</span>
+                </a>
+                <a href="https://github.com/DiegoContrerasSuarez" target="_blank" rel="noreferrer">
+                  <span>GitHub Profile</span><span>OPEN ↗</span>
+                </a>
+                <a href="https://linkedin.com/in/diego-contreras-s" target="_blank" rel="noreferrer">
+                  <span>LinkedIn</span><span>OPEN ↗</span>
+                </a>
+                <a href="https://diegocontrerassuarez.github.io" target="_blank" rel="noreferrer">
+                  <span>Live Site</span><span>LIVE ↗</span>
+                </a>
+              </div>
+            </section>
+
+            <section class="readout">
+              <div class="readout-title"><span>STATUS</span><span>[!]</span></div>
+              <pre class="mono-block">
+> channel: open
+> response mode: email / linkedin
+> collaboration: enabled
+              </pre>
+            </section>
+          </div>
         </div>
 
         <footer class="footer">
-          <div>CONTACT NODE // clipboard enabled</div>
-          <div style="color: rgba(184,255,0,0.85);">Press COPY EMAIL in the nav</div>
+          <span>Contact endpoint</span>
+          <span class="muted-green">CHANNEL OPEN</span>
         </footer>
       </section>
     </main>

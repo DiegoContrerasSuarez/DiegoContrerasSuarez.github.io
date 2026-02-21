@@ -3,28 +3,27 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Portfolio // Projects</title>
+  <title>Projects // Diego Contreras</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <div class="shell">
     <aside class="rail">
-      <div class="dot"></div>
-      <div class="ticks">
-        <div class="tick"></div><div class="tick"></div><div class="tick"></div>
-        <div class="tick"></div><div class="tick"></div><div class="tick"></div>
+      <div class="rail-dot"></div>
+      <div class="rail-lines">
+        <span></span><span></span><span></span><span></span><span></span><span></span>
       </div>
-      <div class="vlabel">PROJECT INDEX</div>
+      <div class="rail-label">PROJECT INDEX</div>
     </aside>
 
     <main class="main">
       <header class="topbar">
         <nav class="nav">
-          <div class="brand">
-            <div class="logo"></div>
-            <div class="name">Diego Contreras</div>
-            <div class="tag">MODULE: PROJECTS</div>
-          </div>
+          <a class="brand" href="index.html">
+            <span class="brand-logo"></span>
+            <span class="brand-name">Diego Contreras</span>
+            <span class="brand-tag">SYSTEM: ONLINE</span>
+          </a>
 
           <div class="navlinks">
             <a data-nav href="index.html">Home</a>
@@ -33,101 +32,144 @@
             <a data-nav href="contact.html">Contact</a>
           </div>
 
-          <div class="cta">
-            <a class="pill" href="contact.html">PING ME</a>
-          </div>
+          <a class="pill" href="project.html?id=portfolio">OPEN_MODULE</a>
         </nav>
       </header>
 
       <section class="page">
-        <div class="pageHead">
-          <div>
-            <h1>Projects</h1>
-            <p>Browse by type (internship / school / personal) and search by tags.</p>
-          </div>
-          <div class="chip"><b>TIP</b> click any project to open details</div>
-        </div>
+        <section class="panel compact">
+          <div class="panel-inner">
+            <div class="kicker">MODULE INDEX // FILTER</div>
+            <h1 class="page-title">Projects</h1>
+            <p class="sub">
+              A searchable index of projects from internships, school, and personal builds.
+            </p>
 
-        <div class="bar">
-          <input id="projectSearch" placeholder="Search: allocator, python, web, api, systems..." />
-          <select id="projectType">
-            <option value="all">All Types</option>
-            <option value="internship">Internship</option>
-            <option value="school">School</option>
-            <option value="personal">Personal</option>
-          </select>
-        </div>
+            <div class="filters">
+              <div class="field">
+                <label for="projectSearch">Search</label>
+                <input id="projectSearch" type="text" placeholder="allocator, web, data, python..." />
+              </div>
+              <div class="field">
+                <label for="projectType">Category</label>
+                <select id="projectType">
+                  <option value="all">All</option>
+                  <option value="school">School</option>
+                  <option value="internship">Internship</option>
+                  <option value="personal">Personal</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </section>
 
         <div class="grid">
-          <a class="pcard span6" href="project.html?id=allocator"
-             data-project data-type="school" data-name="Dynamic Memory Allocator" data-tags="c systems malloc free list coalescing splitting">
-            <div class="top">
+          <a class="pcard span6"
+             href="project.html?id=allocator"
+             data-project
+             data-name="Dynamic Memory Allocator"
+             data-tags="c memory allocator free list systems coalescing splitting"
+             data-type="school">
+            <div class="pcard-top">
               <h3 class="name">Dynamic Memory Allocator</h3>
               <div class="badge">SCHOOL</div>
             </div>
-            <p class="desc">Explicit free list allocator with coalescing/splitting + binning strategy.</p>
-            <div class="footer">
-              <div class="tags"><span class="tag">C</span><span class="tag">Systems</span><span class="tag">Perf</span></div>
+            <p class="desc">Explicit free list allocator with coalescing + splitting, tuned for utilization and throughput.</p>
+            <div class="pcard-footer">
+              <div class="tags"><span>C</span><span>Memory</span><span>Systems</span></div>
               <div class="arrow">OPEN →</div>
             </div>
           </a>
 
-          <a class="pcard span6" href="project.html?id=huffman"
-             data-project data-type="school" data-name="Huffman Coding Compressor" data-tags="java compression trees priority queue io">
-            <div class="top">
+          <a class="pcard span6"
+             href="project.html?id=huffman"
+             data-project
+             data-name="Huffman Coding Compressor"
+             data-tags="java huffman compression trees bitstream coding"
+             data-type="school">
+            <div class="pcard-top">
               <h3 class="name">Huffman Coding Compressor</h3>
               <div class="badge">SCHOOL</div>
             </div>
-            <p class="desc">Bit-level compression pipeline using Huffman trees; encoding + decoding support.</p>
-            <div class="footer">
-              <div class="tags"><span class="tag">Java</span><span class="tag">Trees</span><span class="tag">IO</span></div>
+            <p class="desc">Bit-level compression and decompression with tree construction and custom code tables.</p>
+            <div class="pcard-footer">
+              <div class="tags"><span>Java</span><span>Compression</span><span>Trees</span></div>
               <div class="arrow">OPEN →</div>
             </div>
           </a>
 
-          <a class="pcard span4" href="project.html?id=voicebot"
-             data-project data-type="personal" data-name="Voice-to-Text Chat Assistant" data-tags="python speech recognition overlay hotkeys automation">
-            <div class="top">
-              <h3 class="name">Voice-to-Text Assistant</h3>
-              <div class="badge">PERSONAL</div>
-            </div>
-            <p class="desc">Push-to-talk recognition + overlay UI for fast chat sending.</p>
-            <div class="footer">
-              <div class="tags"><span class="tag">Python</span><span class="tag">UX</span></div>
-              <div class="arrow">OPEN →</div>
-            </div>
-          </a>
-
-          <a class="pcard span4" href="project.html?id=portfolio"
-             data-project data-type="personal" data-name="Cyber HUD Portfolio" data-tags="html css js multi-page theme ui">
-            <div class="top">
+          <a class="pcard span6"
+             href="project.html?id=portfolio"
+             data-project
+             data-name="Cyber HUD Portfolio"
+             data-tags="portfolio ui web html css js hud neon"
+             data-type="personal">
+            <div class="pcard-top">
               <h3 class="name">Cyber HUD Portfolio</h3>
-              <div class="badge">PERSONAL</div>
+              <div class="badge personal">PERSONAL</div>
             </div>
-            <p class="desc">Neon UI theme with multi-page layout + filters + readouts.</p>
-            <div class="footer">
-              <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span></div>
+            <p class="desc">Multi-page portfolio with filtering, page glow transitions, and reusable HUD components.</p>
+            <div class="pcard-footer">
+              <div class="tags"><span>HTML</span><span>CSS</span><span>JS</span></div>
               <div class="arrow">OPEN →</div>
             </div>
           </a>
 
-          <a class="pcard span4" href="project.html?id=internship-template"
-             data-project data-type="internship" data-name="Internship Project Template" data-tags="internship dashboard api data tool">
-            <div class="top">
-              <h3 class="name">Internship Project (Template)</h3>
-              <div class="badge">INTERNSHIP</div>
+          <a class="pcard span6"
+             href="project.html?id=voicebot"
+             data-project
+             data-name="Voice-to-Text Assistant"
+             data-tags="python speech recognition overlay automation assistant"
+             data-type="personal">
+            <div class="pcard-top">
+              <h3 class="name">Voice-to-Text Assistant</h3>
+              <div class="badge personal">PERSONAL</div>
             </div>
-            <p class="desc">Replace this with your real internship work—describe outcomes without sensitive details.</p>
-            <div class="footer">
-              <div class="tags"><span class="tag">API</span><span class="tag">Tooling</span></div>
+            <p class="desc">Push-to-talk transcription and on-screen feedback for fast chat workflows.</p>
+            <div class="pcard-footer">
+              <div class="tags"><span>Python</span><span>Speech</span><span>UX</span></div>
+              <div class="arrow">OPEN →</div>
+            </div>
+          </a>
+
+          <a class="pcard span6"
+             href="project.html?id=internship-template"
+             data-project
+             data-name="Internship Project Template"
+             data-tags="internship tooling data impact project summary"
+             data-type="internship">
+            <div class="pcard-top">
+              <h3 class="name">Internship Work (Template)</h3>
+              <div class="badge internship">INTERNSHIP</div>
+            </div>
+            <p class="desc">Public-safe project template for internship work: problem, role, tools, outcomes.</p>
+            <div class="pcard-footer">
+              <div class="tags"><span>Impact</span><span>Tooling</span><span>Docs</span></div>
+              <div class="arrow">OPEN →</div>
+            </div>
+          </a>
+
+          <a class="pcard span6"
+             href="project.html?id=data-viz"
+             data-project
+             data-name="Data Visualization Dashboard"
+             data-tags="dashboard data viz charts js analytics internship"
+             data-type="internship">
+            <div class="pcard-top">
+              <h3 class="name">Data Viz Dashboard</h3>
+              <div class="badge internship">INTERNSHIP</div>
+            </div>
+            <p class="desc">Dashboard-style reporting interface for visualizing operational or project metrics.</p>
+            <div class="pcard-footer">
+              <div class="tags"><span>Data</span><span>Dashboard</span><span>UI</span></div>
               <div class="arrow">OPEN →</div>
             </div>
           </a>
         </div>
 
         <footer class="footer">
-          <div>PROJECTS NODE // filter + search enabled</div>
-          <div style="color: rgba(184,255,0,0.85);">HINT: add more cards in projects.html</div>
+          <span>Filter modules by search + category</span>
+          <span class="muted-green">INDEX READY</span>
         </footer>
       </section>
     </main>

@@ -3,28 +3,27 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Portfolio // About</title>
+  <title>About // Diego Contreras</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <div class="shell">
     <aside class="rail">
-      <div class="dot"></div>
-      <div class="ticks">
-        <div class="tick"></div><div class="tick"></div><div class="tick"></div>
-        <div class="tick"></div><div class="tick"></div><div class="tick"></div>
+      <div class="rail-dot"></div>
+      <div class="rail-lines">
+        <span></span><span></span><span></span><span></span><span></span><span></span>
       </div>
-      <div class="vlabel">ABOUT NODE</div>
+      <div class="rail-label">ABOUT NODE</div>
     </aside>
 
     <main class="main">
       <header class="topbar">
         <nav class="nav">
-          <div class="brand">
-            <div class="logo"></div>
-            <div class="name">Diego Contreras</div>
-            <div class="tag">PROFILE</div>
-          </div>
+          <a class="brand" href="index.html">
+            <span class="brand-logo"></span>
+            <span class="brand-name">Diego Contreras</span>
+            <span class="brand-tag">SYSTEM: ONLINE</span>
+          </a>
 
           <div class="navlinks">
             <a data-nav href="index.html">Home</a>
@@ -33,79 +32,118 @@
             <a data-nav href="contact.html">Contact</a>
           </div>
 
-          <div class="cta">
-            <a class="pill" href="projects.html">SEE WORK</a>
-          </div>
+          <a class="pill" href="contact.html">CONTACT</a>
         </nav>
       </header>
 
       <section class="page">
-        <div class="pageHead">
-          <div>
-            <h1>About</h1>
-            <p>Who I am, what I build, and what I’m optimizing for.</p>
-          </div>
-          <div class="chip"><b>MODE</b> concise + practical</div>
-        </div>
-
-        <div class="grid">
-          <div class="card span8">
-            <div class="inner">
-              <div class="kicker">BIO</div>
-              <div class="h1" style="font-size: clamp(34px, 3.7vw, 56px); margin-top:12px;">
-                <span class="accent">Builder</span> of tools & systems
-              </div>
-
+        <div class="detail-grid">
+          <section class="panel detail-main">
+            <div class="panel-inner">
+              <div class="kicker">PROFILE // ABOUT</div>
+              <h1 class="page-title">About</h1>
               <p class="sub">
-                I like shipping projects that feel clean, fast, and intentional—whether that’s a systems assignment,
-                a data tool, or a UI that looks like it came out of a sci-fi HUD.
+                I’m Diego Contreras, a UT Austin student focused on software, systems, and technical interfaces.
+                I like building things that feel clean, fast, and easy to reason about.
               </p>
 
-              <div class="sectionTitle" style="margin-top:18px;">
-                <h2>Core Skills</h2><div class="line"></div>
+              <div class="section-title small">
+                <h2>Snapshot</h2>
+                <div class="line"></div>
               </div>
 
-              <div class="metaRow">
-                <div class="chip"><b>Systems</b> C / memory / debugging</div>
-                <div class="chip"><b>Software</b> APIs / tooling / automation</div>
-                <div class="chip"><b>Web</b> UI / UX / component structure</div>
-                <div class="chip"><b>Data</b> analysis + visualization</div>
+              <div class="impact-grid">
+                <article class="impact-card">
+                  <div class="impact-top">
+                    <span class="label">Education</span>
+                    <span class="num">UT</span>
+                  </div>
+                  <p>
+                    Computer Science + Government at UT Austin, with technical coursework spanning systems, data structures, and software development.
+                  </p>
+                </article>
+
+                <article class="impact-card">
+                  <div class="impact-top">
+                    <span class="label">Strengths</span>
+                    <span class="num">DEV</span>
+                  </div>
+                  <p>
+                    Debugging, implementation detail, and turning rough ideas into polished, presentable outputs.
+                  </p>
+                </article>
+
+                <article class="impact-card">
+                  <div class="impact-top">
+                    <span class="label">Interests</span>
+                    <span class="num">UI</span>
+                  </div>
+                  <p>
+                    Systems programming, software engineering, tooling, and frontend interfaces with strong visual identity.
+                  </p>
+                </article>
+              </div>
+
+              <div class="section-title small">
+                <h2>What I Build</h2>
+                <div class="line"></div>
+              </div>
+
+              <div class="bullet-panel">
+                <ul>
+                  <li>Systems projects (allocators, low-level debugging, performance-focused code)</li>
+                  <li>Web interfaces (multi-page sites, styling systems, interactive UI components)</li>
+                  <li>Automation/tools (scripts, assistant workflows, productivity helpers)</li>
+                  <li>Course projects that can be presented clearly to recruiters and teams</li>
+                </ul>
               </div>
             </div>
+          </section>
+
+          <div class="side-stack">
+            <section class="readout">
+              <div class="readout-title"><span>CORE STACK</span><span>[C]</span></div>
+              <div class="meta-row stack-wrap">
+                <div class="chip">C</div>
+                <div class="chip">Java</div>
+                <div class="chip">Python</div>
+                <div class="chip">JavaScript</div>
+                <div class="chip">HTML/CSS</div>
+                <div class="chip">Git</div>
+              </div>
+            </section>
+
+            <section class="readout">
+              <div class="readout-title"><span>LINKS</span><span>[Z]</span></div>
+              <div class="link-list">
+                <a href="https://github.com/DiegoContrerasSuarez" target="_blank" rel="noreferrer">
+                  <span>GitHub Profile</span><span>OPEN ↗</span>
+                </a>
+                <a href="https://github.com/DiegoContrerasSuarez/DiegoContrerasSuarez.github.io" target="_blank" rel="noreferrer">
+                  <span>Portfolio Repo</span><span>CODE ↗</span>
+                </a>
+                <a href="https://linkedin.com/in/diego-contreras-s" target="_blank" rel="noreferrer">
+                  <span>LinkedIn</span><span>OPEN ↗</span>
+                </a>
+                <a href="mailto:diegocontreras040105@gmail.com" data-no-transition>
+                  <span>Email</span><span>SEND</span>
+                </a>
+              </div>
+            </section>
+
+            <section class="readout">
+              <div class="readout-title"><span>NEXT</span><span>[→]</span></div>
+              <div class="link-list">
+                <a href="projects.html"><span>See Projects</span><span>OPEN</span></a>
+                <a href="contact.html"><span>Contact Page</span><span>OPEN</span></a>
+              </div>
+            </section>
           </div>
-
-          <div class="span4">
-            <div class="readout" style="margin-bottom:14px;">
-              <div class="title"><span>STATUS</span><span>[OK]</span></div>
-              <pre>
-> location: Austin, TX
-> track: CS + Government
-> focus: internships + shipping
-              </pre>
-            </div>
-
-            <div class="readout">
-  <div class="title"><span>LINKS</span><span>[Z]</span></div>
-  <div class="linkList">
-    <a href="https://github.com/DiegoContrerasSuarez" target="_blank" rel="noreferrer">
-      <span>GitHub Profile</span><span>OPEN ↗</span>
-    </a>
-    <a href="https://github.com/DiegoContrerasSuarez/DiegoContrerasSuarez.github.io" target="_blank" rel="noreferrer">
-      <span>Portfolio Repo</span><span>CODE ↗</span>
-    </a>
-    <a href="https://linkedin.com/in/diego-contreras-s" target="_blank" rel="noreferrer">
-      <span>LinkedIn</span><span>OPEN ↗</span>
-    </a>
-    <a href="mailto:diegocontreras040105@gmail.com" data-no-transition>
-      <span>Email</span><span>SEND</span>
-    </a>
-  </div>
-</div>
         </div>
 
         <footer class="footer">
-          <div>ABOUT NODE // keep it short, keep it sharp</div>
-          <div style="color: rgba(184,255,0,0.85);">Next: add real links</div>
+          <span>About Diego</span>
+          <span class="muted-green">PROFILE LOADED</span>
         </footer>
       </section>
     </main>
