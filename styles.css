@@ -615,7 +615,7 @@ button.ghost-btn{
 .badge{
   flex:0 0 auto;
   border:1px solid rgba(184,255,0,0.35);
-  border-radius:999px;
+  border-radius:0;
   padding:6px 10px;
   font-family:var(--head);
   font-size:10px;
@@ -657,7 +657,7 @@ button.ghost-btn{
 }
 .tags span{
   border:1px solid rgba(255,255,255,0.12);
-  border-radius:999px;
+  border-radius:0;
   padding:4px 8px;
   font-family:var(--mono);
   font-size:10px;
@@ -682,7 +682,7 @@ button.ghost-btn{
 .headline-box{
   margin-top:12px;
   border:1px solid rgba(184,255,0,0.25);
-  border-radius:14px;
+  border-radius:0;
   background: rgba(184,255,0,0.03);
   color: var(--green);
   padding:12px;
@@ -695,7 +695,7 @@ button.ghost-btn{
 .bullet-panel{
   margin-top:12px;
   border:1px solid rgba(255,255,255,0.10);
-  border-radius:14px;
+  border-radius:0;
   background: rgba(255,255,255,0.02);
   padding:12px 14px;
 }
@@ -731,7 +731,7 @@ button.ghost-btn{
   border:1px solid rgba(255,255,255,0.12);
   background: rgba(255,255,255,0.03);
   color:rgba(255,255,255,0.95);
-  border-radius:12px;
+  border-radius:0;
   padding:10px 12px;
   font-size:13px;
   outline:none;
