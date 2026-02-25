@@ -536,7 +536,7 @@ button.ghost-btn{
 }
 .impact-card{
   border:1px solid rgba(184,255,0,0.18);
-  border-radius: var(--radius);
+  border-radius: 0;
   background: rgba(255,255,255,0.02);
   padding:12px;
   transition: all .18s ease;
